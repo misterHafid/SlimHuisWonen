@@ -11,7 +11,8 @@
     "validate:products": "node scripts/validateProducts.js",
     "validate:site": "node scripts/validateSite.js",
     "create:product": "node scripts/createProduct.js",
-    "create:product:smart": "node scripts/createProductSmart.js"
+    "create:product:smart": "node scripts/createProductSmart.js",
+    "sync-bol-images": "node scripts/sync-bol-images.mjs"
   },
   "dependencies": {
     "csv-parse": "^6.1.0",

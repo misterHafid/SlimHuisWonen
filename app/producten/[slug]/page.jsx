@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { getProductBySlug, getAllProducts } from "@/data/products";
+import { getBolUrl } from "@/lib/bol-api";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -107,6 +108,7 @@ export default function ProductPage({ params }) {
   } = product;
 
   const amazonUrl = getAmazonUrl(product);
+  const bolUrl    = getBolUrl(product);
   const rawVideoUrl = getVideoUrl(product);
   const youtubeEmbedUrl = toYouTubeEmbedUrl(rawVideoUrl);
 
@@ -288,20 +290,55 @@ export default function ProductPage({ params }) {
               </p>
             )}
 
-            {/* ✅ Amazon knop */}
-            {amazonUrl && (
+            {/* ✅ Knoppen: Amazon + bol.com */}
+            {(amazonUrl || bolUrl) && (
               <div style={{ marginTop: "1.5rem" }}>
-                <a
-                  href={amazonUrl}
-                  target="_blank"
-                  rel="noopener noreferrer sponsored"
-                  className="btn btn-primary"
-                >
-                  Bekijk prijs op Amazon →
-                </a>
-
-                <p style={{ marginTop: "0.75rem", fontSize: "0.95rem", opacity: 0.7 }}>
-                  * Affiliate link — jij betaalt niets extra, ik ontvang een kleine commissie.
+                <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+                  {amazonUrl && (
+                    <a
+                      href={amazonUrl}
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.4rem",
+                        padding: "0.6rem 1.1rem",
+                        borderRadius: "8px",
+                        background: "#f59e0b",
+                        color: "#1a1a1a",
+                        fontWeight: 700,
+                        fontSize: "0.9rem",
+                        textDecoration: "none",
+                      }}
+                    >
+                      Bekijk op Amazon →
+                    </a>
+                  )}
+                  {bolUrl && (
+                    <a
+                      href={bolUrl}
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.4rem",
+                        padding: "0.6rem 1.1rem",
+                        borderRadius: "8px",
+                        background: "#0000a4",
+                        color: "#fff",
+                        fontWeight: 700,
+                        fontSize: "0.9rem",
+                        textDecoration: "none",
+                      }}
+                    >
+                      Bekijk op bol.com →
+                    </a>
+                  )}
+                </div>
+                <p style={{ marginTop: "0.75rem", fontSize: "0.85rem", opacity: 0.6 }}>
+                  * Affiliate links — jij betaalt niets extra, ik ontvang een kleine commissie.
                 </p>
               </div>
             )}

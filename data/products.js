@@ -1,3 +1,9 @@
+/**
+ * EAN-codes voor bol.com knoppen:
+ * Voeg per product toe: ean: "1234567890123"
+ * EAN vind je op bol.com in de URL (/p/naam/EAN/) of in productspecificaties.
+ * Laat het veld weg of zet "" als je de EAN nog niet weet → geen bol.com knop.
+ */
 export const products = [
   /* =========================
      SLIMME VERLICHTING
@@ -5,6 +11,7 @@ export const products = [
 
   {
     slug: "philips-hue-white-ambiance-starterkit",
+    ean: "8718696904503",
     brand: "Philips Hue",
     name: "Philips Hue White Ambiance Starterkit",
     category: "slimme-verlichting",
@@ -30,6 +37,7 @@ export const products = [
 
   {
     slug: "philips-hue-white-e27",
+    ean: "8719514288232",
     brand: "Philips Hue",
     name: "Philips Hue White E27 (losse lamp)",
     category: "slimme-verlichting",
@@ -45,6 +53,7 @@ export const products = [
 
   {
     slug: "philips-hue-color-ambiance-e27",
+    ean: "8719514291171",
     brand: "Philips Hue",
     name: "Philips Hue Color Ambiance E27",
     category: "slimme-verlichting",
@@ -64,6 +73,7 @@ export const products = [
 
   {
     slug: "philips-hue-lightstrip-plus",
+    ean: "8721103087812",
     brand: "Philips Hue",
     name: "Philips Hue Lightstrip Plus",
     category: "slimme-verlichting",
@@ -79,6 +89,7 @@ export const products = [
 
   {
     slug: "govee-rgbic-ledstrip",
+    ean: "6974316999911",
     brand: "Govee",
     name: "Govee RGBIC Pro LED Strip (5 m)",
     category: "slimme-verlichting",
@@ -98,6 +109,7 @@ export const products = [
 
   {
     slug: "tapo-l530e",
+    ean: "6935364006167",
     brand: "TP-Link Tapo",
     name: "Tapo L530E Slimme Wi-Fi Lamp (2-pack)",
     category: "slimme-verlichting",
@@ -117,6 +129,7 @@ export const products = [
 
   {
     slug: "innr-zigbee-e27",
+    ean: "8718781555108",
     brand: "Innr",
     name: "Innr Zigbee E27 LED (4-pack)",
     category: "slimme-verlichting",
@@ -136,6 +149,7 @@ export const products = [
 
   {
     slug: "tapo-l510e",
+    ean: "6935364030988",
     brand: "TP-Link Tapo",
     name: "Tapo L510E Slimme Wi-Fi Lamp",
     category: "slimme-verlichting",
@@ -154,6 +168,7 @@ export const products = [
 
   {
     slug: "aqara-deur-raamsensor-p2",
+    ean: "6970504219649",
     brand: "Aqara",
     name: "Aqara Deur- & Raamsensor",
     category: "sensoren",
@@ -192,6 +207,7 @@ export const products = [
 
   {
     slug: "aqara-fp2-aanwezigheidssensor",
+  ean: "6970504219663",
     brand: "Aqara",
     name: "Aqara FP2 Aanwezigheidssensor",
     category: "sensoren",
@@ -211,6 +227,7 @@ export const products = [
 
   {
     slug: "aqara-temperatuur-rv-t1",
+    ean: "0192784001264",
     brand: "Aqara",
     name: "Aqara Temperatuur & RV Sensor T1",
     category: "sensoren",
@@ -226,6 +243,7 @@ export const products = [
 
   {
     slug: "tapo-t110",
+    ean: "4897098682951",
     brand: "TP-Link Tapo",
     name: "Tapo T110 Contactsensor",
     category: "sensoren",
@@ -241,6 +259,7 @@ export const products = [
 
   {
     slug: "aqara-waterleksensor-t1",
+    ean: "6975833352142",
     brand: "Aqara",
     name: "Aqara Waterleksensor T1",
     category: "sensoren",
@@ -255,6 +274,7 @@ export const products = [
 
   {
     slug: "tapo-t315",
+    ean: "4897098682401",
     brand: "TP-Link Tapo",
     name: "Tapo T315 Temperatuur & Luchtvochtigheid",
     category: "sensoren",
@@ -270,6 +290,7 @@ export const products = [
 
   {
     slug: "aqara-vibratiesensor",
+    ean: "6975833357789",
     brand: "Aqara",
     name: "Aqara Vibratiesensor",
     category: "sensoren",
@@ -288,6 +309,7 @@ export const products = [
 
   {
     slug: "ring-video-deurbel",
+    ean: "0840268997984",
     brand: "Ring",
     name: "Ring Video Deurbel (batterij)",
     category: "slimme-deurbellen",
@@ -302,24 +324,6 @@ export const products = [
     forWho: ["Voor wie geen bedrading wil aanpassen", "Voor Amazon Alexa gebruikers"],
     personalNote: "Goede keuze voor wie simpel wil beginnen. Wil je meer privacy of smart home integratie, kijk dan ook naar Aqara G410 of Reolink.",
     youtubeUrl: "https://www.youtube.com/shorts/_Oz6c6BiMjo",
-  },
-
-  {
-    slug: "tapo-videodeurbel-pro",
-    brand: "TP-Link Tapo",
-    name: "Tapo Videodeurbel Pro",
-    category: "slimme-deurbellen",
-    image: "/images/products/tapo-video-deurbel-pro.png",
-    description: "Videodeurbel met AI-detectie en kleurennachtzicht.",
-    features: ["AI detectie", "Kleur nachtzicht", "Smart meldingen"],
-    affiliateUrl: "https://www.amazon.nl/dp/B0DK5ZPSHH?tag=slimhuiswonen-21",
-    priceHint: "€70 – €85",
-    priceLastUpdated: "april 2026",
-    pros: ["AI-detectie onderscheidt personen van dieren", "Kleurennachtzicht", "Geen verplicht abonnement"],
-    cons: ["Tapo-ecosysteem vereist voor volledige integratie"],
-    forWho: ["Voor wie scherp beeld wil zonder maandelijkse kosten", "Voor Tapo-gebruikers"],
-    personalNote: "Sterke prijs-kwaliteitverhouding. De AI-detectie werkt verrassend goed voor deze prijs.",
-    youtubeUrl: "https://www.youtube.com/shorts/1VTw4yg5QYo",
   },
 
   /* =========================
@@ -346,6 +350,7 @@ export const products = [
 
   {
     slug: "slimme-thermostaat-combiketel",
+    ean: "8721352852360",
     brand: "Universeel",
     name: "Slimme Thermostaat voor Combiketel",
     category: "slimme-thermostaten",
@@ -360,6 +365,7 @@ export const products = [
 
   {
     slug: "tapo-ke100-kit",
+    ean: "4897098688588",
     brand: "TP-Link",
     name: "TP-Link KE100 KIT Radiatorknop",
     category: "slimme-thermostaten",
@@ -381,6 +387,7 @@ export const products = [
 
   {
     slug: "tapo-p115",
+    ean: "4897098687406",
     brand: "TP-Link Tapo",
     name: "TP-Link Tapo P115 Slimme Stekker",
     category: "slimme-stekkers",
@@ -400,6 +407,7 @@ export const products = [
 
   {
     slug: "tapo-p110",
+    ean: "4897098682432",
     brand: "TP-Link Tapo",
     name: "TP-Link Tapo P110 Slimme Stekker",
     category: "slimme-stekkers",
@@ -415,6 +423,7 @@ export const products = [
 
   {
     slug: "eve-energy",
+    ean: "4260195392328",
     brand: "Eve",
     name: "Eve Energy (Matter / Thread)",
     category: "slimme-stekkers",
@@ -434,6 +443,7 @@ export const products = [
 
   {
     slug: "philips-hue-smart-plug",
+    ean: "8719514342309",
     brand: "Philips Hue",
     name: "Philips Hue Smart Plug",
     category: "slimme-stekkers",
@@ -448,6 +458,7 @@ export const products = [
 
   {
     slug: "philips-hue-smart-plug-combipack",
+    ean: "8719327502785",
     brand: "Philips Hue",
     name: "Philips Hue Smart Plug + Dimmer Switch",
     category: "slimme-stekkers",
@@ -462,6 +473,7 @@ export const products = [
 
   {
     slug: "innr-zigbee-outdoor-smart-plug",
+    ean: "8718781556273",
     brand: "Innr",
     name: "Innr Zigbee Outdoor Smart Plug",
     category: "slimme-stekkers",
@@ -479,6 +491,7 @@ export const products = [
 
   {
     slug: "switchbot-matter-plug-mini",
+    ean: "0810150540291",
     brand: "SwitchBot",
     name: "SwitchBot Matter Plug Mini",
     category: "slimme-stekkers",
@@ -495,6 +508,7 @@ export const products = [
 
   {
     slug: "aqara-smart-plug",
+    ean: "6970504210646",
     brand: "Aqara",
     name: "Aqara Smart Plug",
     category: "slimme-stekkers",
@@ -519,12 +533,13 @@ export const products = [
 
   {
     slug: "aqara-doorbell-g410-grey",
+    ean: "6975833358397",
     brand: "Aqara",
-    name: "Aqara Video Doorbell G410 (Grijs)",
+    name: "Aqara Video Doorbell G410 (Wit)",
     category: "slimme-deurbellen",
     image: "/images/products/aqara-doorbell-g410-grey.png",
     description:
-      "Bedrade of draadloze slimme deurbel met 2K-beeld, ingebouwde Matter hub en HomeKit Secure Video.",
+      "Bedrade of draadloze slimme deurbel in het wit met 2K-beeld, ingebouwde Matter hub en HomeKit Secure Video.",
     features: ["2K", "Matter", "Bedraad / Accu"],
     affiliateUrl:
       "https://www.amazon.nl/Aqara-ingebouwde-Draadloos-Compatibel-Assistant/dp/B0F6CJF9M9?tag=slimhuiswonen-21",
@@ -539,6 +554,7 @@ export const products = [
 
   {
     slug: "aqara-doorbell-g410-black",
+    ean: "6975833358380",
     brand: "Aqara",
     name: "Aqara Video Doorbell G410 (Zwart)",
     category: "slimme-deurbellen",
@@ -555,6 +571,7 @@ export const products = [
 
   {
     slug: "tapo-d205",
+    ean: "1210002607810",
     brand: "TP-Link",
     name: "Tapo D205",
     category: "slimme-deurbellen",
@@ -574,6 +591,7 @@ export const products = [
 
   {
     slug: "tapo-d235",
+    ean: "4895252501254",
     brand: "TP-Link",
     name: "Tapo D235",
     category: "slimme-deurbellen",
@@ -590,6 +608,7 @@ export const products = [
 
   {
     slug: "reolink-video-doorbell-wifi",
+    ean: "6978285036684",
     brand: "Reolink",
     name: "Reolink Video Doorbell Wi-Fi",
     category: "slimme-deurbellen",
@@ -614,6 +633,7 @@ export const products = [
 
 {
   slug: "eufy-indoor-cam",
+  ean: "0194644176136",
   name: "Eufy Indoor Cam",
   brand: "Eufy",
   category: "slimme-cameras",
@@ -653,6 +673,7 @@ export const products = [
 
 {
   slug: "eufy-solo-outdoor-cam",
+  ean: "0194644247546",
   name: "Eufy Solo Outdoor Cam",
   brand: "Eufy",
   category: "slimme-cameras",
@@ -673,6 +694,7 @@ export const products = [
 
 {
   slug: "reolink-poe-camera",
+  ean: "6976930225858",
   name: "Reolink PoE Camera",
   brand: "Reolink",
   category: "slimme-cameras",
@@ -693,6 +715,7 @@ export const products = [
 
 {
   slug: "tapo-c200",
+  ean: "6935364088095",
   name: "TP-Link Tapo C200",
   brand: "TP-Link",
   category: "slimme-cameras",
@@ -713,6 +736,7 @@ export const products = [
 
 {
   slug: "eve-cam",
+  ean: "4260195392427",
   name: "Eve Cam",
   brand: "Eve",
   category: "slimme-cameras",
@@ -737,6 +761,7 @@ export const products = [
 
 {
   slug: "aqara-motion-sensor",
+  ean: "6970504219656",
   name: "Aqara Bewegingssensor",
   brand: "Aqara",
   category: "sensoren",
@@ -833,6 +858,7 @@ export const products = [
 
 {
   slug: "homey-pro-early-2023",
+  ean: "8719327218198",
   brand: "Homey",
   name: "Homey Pro (Early 2023)",
   category: "smart-home-hubs",
@@ -853,6 +879,7 @@ export const products = [
 
 {
   slug: "homey-bridge",
+  ean: "8717953223487",
   brand: "Homey",
   name: "Homey Bridge",
   category: "smart-home-hubs",
@@ -871,6 +898,7 @@ export const products = [
 
 {
   slug: "philips-hue-bridge",
+  ean: "8720169155114",
   brand: "Philips Hue",
   name: "Philips Hue Bridge",
   category: "smart-home-hubs",
@@ -914,6 +942,7 @@ export const products = [
 
 {
   slug: "tado-smart-thermostat-v3",
+  ean: "4260328611968",
   brand: "Tado",
   name: "Tado Slimme Thermostaat V3+",
   category: "slimme-thermostaten",
@@ -936,6 +965,7 @@ export const products = [
 
 {
   slug: "netatmo-slimme-thermostaat",
+  ean: "3700730503853",
   brand: "Netatmo",
   name: "Netatmo Slimme Thermostaat",
   category: "slimme-thermostaten",
@@ -961,19 +991,20 @@ export const products = [
 
 {
   slug: "tp-link-deco-xe75",
+  ean: "0840030707148",
   brand: "TP-Link",
-  name: "TP-Link Deco XE75 (WiFi 6E Mesh)",
+  name: "TP-Link Deco XE75 (WiFi 6E Mesh, 3-pack)",
   category: "mesh-wifi",
   image: "/images/products/tp-link-deco-xe75.png",
   description:
-    "Krachtig WiFi 6E mesh-systeem voor een snel en stabiel netwerk in het hele huis. Ideaal voor smart home met veel apparaten.",
+    "Krachtig WiFi 6E mesh-systeem in 3-pack voor een snel en stabiel netwerk in het hele huis. Dekt tot 750 m². Ideaal voor smart home met veel apparaten.",
   features: [
     "WiFi 6E (tri-band)",
-    "Tot 250 m² dekking per punt",
+    "3-pack — tot 750 m² dekking",
     "Eenvoudig uitbreidbaar",
   ],
   affiliateUrl: "https://www.amazon.nl/TP-Link-Deco-XE75-3-pack-Gigabit-poorten/dp/B09ZRY9YHB?tag=slimhuiswonen-21",
-  priceHint: "€140 – €180",
+  priceHint: "€280 – €310",
   priceLastUpdated: "april 2026",
   pros: ["WiFi 6E — snelste standaard", "Tot 250 m² per punt", "Eenvoudig uitbreidbaar"],
   cons: ["Premium prijs", "WiFi 6E vereist ondersteunde apparaten"],
@@ -1006,6 +1037,7 @@ export const products = [
 
 {
   slug: "google-nest-wifi-pro",
+  ean: "0193575004563",
   brand: "Google",
   name: "Google Nest Wifi Pro",
   category: "mesh-wifi",
@@ -1032,6 +1064,7 @@ export const products = [
 
 {
   slug: "nuki-smart-lock-4-pro",
+  ean: "6154545266286",
   brand: "Nuki",
   name: "Nuki Smart Lock 4 Pro",
   category: "slimme-sloten",
@@ -1055,6 +1088,7 @@ export const products = [
 
 {
   slug: "yale-linus-smart-lock",
+  ean: "5052847179307",
   brand: "Yale",
   name: "Yale Linus Smart Lock",
   category: "slimme-sloten",
@@ -1125,6 +1159,7 @@ export const products = [
 
 {
   slug: "shelly-pro-3em",
+  ean: "3800235268193",
   brand: "Shelly",
   name: "Shelly Pro 3EM",
   category: "energie-monitors",
@@ -1174,6 +1209,7 @@ export const products = [
 
 {
   slug: "philips-hue-gu10-white-ambiance",
+  ean: "8719514340145",
   brand: "Philips Hue",
   name: "Philips Hue GU10 White Ambiance (2-pack)",
   category: "slimme-verlichting",
@@ -1193,6 +1229,7 @@ export const products = [
 
 {
   slug: "philips-hue-dimmer-switch-v2",
+  ean: "8719514274617",
   brand: "Philips Hue",
   name: "Philips Hue Dimmer Switch V2",
   category: "slimme-verlichting",
@@ -1212,6 +1249,7 @@ export const products = [
 
 {
   slug: "philips-hue-motion-sensor",
+  ean: "8719514342125",
   brand: "Philips Hue",
   name: "Philips Hue Motion Sensor (binnen)",
   category: "sensoren",
@@ -1231,6 +1269,7 @@ export const products = [
 
 {
   slug: "tapo-l920-5-ledstrip",
+  ean: "4897098682609",
   brand: "TP-Link Tapo",
   name: "Tapo L920-5 RGBIC LED Strip (5m)",
   category: "slimme-verlichting",
@@ -1250,6 +1289,7 @@ export const products = [
 
 {
   slug: "govee-outdoor-ledstrip",
+  ean: "6974316999430",
   brand: "Govee",
   name: "Govee Outdoor LED Strip (10m)",
   category: "slimme-verlichting",
@@ -1273,6 +1313,7 @@ export const products = [
 
 {
   slug: "tapo-h200-smart-hub",
+  ean: "4897098689547",
   brand: "TP-Link Tapo",
   name: "Tapo H200 Smart Hub",
   category: "smart-home-hubs",
@@ -1292,6 +1333,7 @@ export const products = [
 
 {
   slug: "aqara-hub-m3",
+  ean: "6975833351336",
   brand: "Aqara",
   name: "Aqara Hub M3",
   category: "smart-home-hubs",
@@ -1315,6 +1357,7 @@ export const products = [
 
 {
   slug: "tado-smart-thermostat-v3-bedraad",
+  ean: "4260328611968",
   brand: "tado°",
   name: "tado° Slimme Thermostaat V3+ (Bedraad)",
   category: "slimme-thermostaten",
@@ -1334,6 +1377,7 @@ export const products = [
 
 {
   slug: "tado-radiatorkraan-v3-plus",
+  ean: "4260328612040",
   brand: "tado°",
   name: "tado° Slimme Radiatorkraan V3+",
   category: "slimme-thermostaten",
@@ -1357,6 +1401,7 @@ export const products = [
 
 {
   slug: "nuki-smart-lock-3-pro",
+  ean: "9120072083969",
   brand: "Nuki",
   name: "Nuki Smart Lock 3.0 Pro",
   category: "slimme-sloten",
@@ -1375,6 +1420,7 @@ export const products = [
 
 {
   slug: "aqara-smart-lock-u200-lite",
+  ean: "6970504219922",
   brand: "Aqara",
   name: "Aqara Smart Lock U200 Lite",
   category: "slimme-sloten",
@@ -1398,6 +1444,7 @@ export const products = [
 
 {
   slug: "tp-link-deco-xe75-2pack",
+  ean: "4897098684986",
   brand: "TP-Link",
   name: "TP-Link Deco XE75 (2-pack)",
   category: "mesh-wifi",
@@ -1421,6 +1468,7 @@ export const products = [
 
 {
   slug: "zendure-slimme-meter-p1",
+  ean: "6976552197113",
   brand: "Zendure",
   name: "Zendure Slimme Meter P1",
   category: "energie-monitors",
@@ -1439,6 +1487,7 @@ export const products = [
 
 {
   slug: "shelly-em",
+  ean: "3800235268100",
   brand: "Shelly",
   name: "Shelly EM Energiemeter",
   category: "energie-monitors",
@@ -1481,6 +1530,7 @@ export const products = [
 
 {
   slug: "aqara-mini-switch-t1",
+  ean: "6975833352166",
   brand: "Aqara",
   name: "Aqara Mini Switch T1",
   category: "sensoren",
@@ -1500,6 +1550,7 @@ export const products = [
 
 {
   slug: "tapo-t300-waterlekkagesensor",
+  ean: "4897098682364",
   brand: "TP-Link Tapo",
   name: "Tapo T300 Waterlekkagesensor",
   category: "sensoren",
