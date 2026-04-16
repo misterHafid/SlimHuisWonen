@@ -32,6 +32,7 @@ export default function ProductToevoegenPage() {
     brand: "",
     category: "",
     amazonUrl: "",
+    youtubeUrl: "",
     features: "",
     description: "",
   });
@@ -86,6 +87,7 @@ export default function ProductToevoegenPage() {
       brand,
       category: "",
       amazonUrl: "",
+      youtubeUrl: "",
       features: "",
       description: product.name,
     });
@@ -119,6 +121,7 @@ export default function ProductToevoegenPage() {
           bolUrl: selected.bolUrl,
           amazonUrl: form.amazonUrl || null,
           imageUrl: selected.image,
+          youtubeUrl: form.youtubeUrl || null,
           features: form.features.split("\n").map((f) => f.trim()).filter(Boolean),
         }),
       });
@@ -278,10 +281,58 @@ export default function ProductToevoegenPage() {
                 <input
                   value={form.amazonUrl}
                   onChange={(e) => setForm((f) => ({ ...f, amazonUrl: e.target.value }))}
-                  placeholder="https://amazon.nl/dp/..."
+                  placeholder="https://amazon.nl/dp/B08QRQQ53T"
                   style={inputStyle}
                 />
+                {form.amazonUrl && (() => {
+                  try {
+                    const u = new URL(form.amazonUrl);
+                    if (!u.searchParams.has("tag")) u.searchParams.set("tag", "slimhuiswonen-21");
+                    return (
+                      <span style={{ fontSize: "0.75rem", color: "#4ade80", marginTop: "0.25rem" }}>
+                        ✓ wordt opgeslagen als: {u.toString()}
+                      </span>
+                    );
+                  } catch {
+                    return (
+                      <span style={{ fontSize: "0.75rem", color: "#f87171", marginTop: "0.25rem" }}>
+                        ✗ ongeldige URL
+                      </span>
+                    );
+                  }
+                })()}
               </label>
+            </div>
+
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
+              <label style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+                <span style={{ fontSize: "0.82rem", opacity: 0.6 }}>YouTube URL (optioneel)</span>
+                <input
+                  value={form.youtubeUrl}
+                  onChange={(e) => setForm((f) => ({ ...f, youtubeUrl: e.target.value }))}
+                  placeholder="https://youtube.com/watch?v=... of youtu.be/..."
+                  style={inputStyle}
+                />
+                {form.youtubeUrl && (() => {
+                  const url = form.youtubeUrl;
+                  const id = (
+                    url.match(/youtube\.com\/shorts\/([^?&/]+)/)?.[1] ||
+                    url.match(/[?&]v=([^&]+)/)?.[1] ||
+                    url.match(/youtu\.be\/([^?&/]+)/)?.[1] ||
+                    url.match(/youtube\.com\/embed\/([^?&/]+)/)?.[1]
+                  );
+                  return id ? (
+                    <span style={{ fontSize: "0.75rem", color: "#4ade80", marginTop: "0.25rem" }}>
+                      ✓ video-ID: {id}
+                    </span>
+                  ) : (
+                    <span style={{ fontSize: "0.75rem", color: "#f87171", marginTop: "0.25rem" }}>
+                      ✗ geen geldig YouTube-adres
+                    </span>
+                  );
+                })()}
+              </label>
+
             </div>
 
             <label style={{ display: "flex", flexDirection: "column", gap: "0.4rem", marginBottom: "1rem" }}>
@@ -313,6 +364,7 @@ export default function ProductToevoegenPage() {
                 <li>Sterren: {selected.rating || "—"}</li>
                 <li>Bol.com ID: {selected.bolId}</li>
                 <li>Afbeelding: {selected.image ? "wordt gedownload" : "geen"}</li>
+                <li>YouTube: {form.youtubeUrl ? "✓ ingevuld" : "—"}</li>
                 <li>URL: /producten/{form.slug}</li>
               </ul>
             </div>

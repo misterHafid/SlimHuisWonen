@@ -22,7 +22,7 @@ export async function POST(request) {
   }
 
   const body = await request.json();
-  const { slug, name, brand, category, description, price, rating, ean, amazonUrl, imageUrl, features = [] } = body;
+  const { slug, name, brand, category, description, price, rating, ean, amazonUrl, youtubeUrl, imageUrl, features = [] } = body;
 
   if (!slug || !name || !category) {
     return Response.json({ error: "slug, name en category zijn verplicht" }, { status: 400 });
@@ -58,6 +58,19 @@ export async function POST(request) {
     }
   }
 
+  // --- YouTube video ID extraheren ---
+  let finalYoutubeUrl = null;
+  if (youtubeUrl) {
+    const shorts = youtubeUrl.match(/youtube\.com\/shorts\/([^?&/]+)/);
+    const watch  = youtubeUrl.match(/[?&]v=([^&]+)/);
+    const short  = youtubeUrl.match(/youtu\.be\/([^?&/]+)/);
+    const embed  = youtubeUrl.match(/youtube\.com\/embed\/([^?&/]+)/);
+    const videoId = (shorts || watch || short || embed)?.[1];
+    if (videoId) {
+      finalYoutubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
+    }
+  }
+
   // --- Amazon affiliate tag toevoegen ---
   let finalAmazonUrl = amazonUrl || null;
   if (finalAmazonUrl) {
@@ -86,6 +99,7 @@ export async function POST(request) {
     description: "${(description || name).replace(/"/g, "'")}",
     features: [${features.map((f) => `"${String(f).replace(/"/g, "'")}"`).join(", ")}],
     ${finalAmazonUrl ? `affiliateUrl: "${finalAmazonUrl}",` : ""}
+    ${finalYoutubeUrl ? `youtubeUrl: "${finalYoutubeUrl}",` : ""}
     ${priceHint ? `priceHint: "${priceHint}",` : ""}
     priceLastUpdated: "${new Date().toLocaleDateString("nl-NL", { month: "long", year: "numeric" })}",
     ${rating ? `rating: ${rating},` : ""}
