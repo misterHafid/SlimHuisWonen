@@ -2823,7 +2823,7 @@ export const blogPosts = [
   title: "Slimme radiatorkraan: wat is het en welke is de beste in 2026?",
   description:
     "Een slimme radiatorkraan regelt elke kamer apart op temperatuur en bespaart flink op je stookkosten. Lees hoe het werkt en welke je het best kunt kopen.",
-  image: "/images/blog/beste-slimme-thermostaat.png",
+  image: "/images/blog/slimme-radiatorkraan.png",
   category: "Energie",
   available: true,
   datePublished: "2025-07-15",
@@ -2987,7 +2987,7 @@ export const blogPosts = [
   title: "Homey Bridge of Homey Pro? De eerlijke vergelijking (2026)",
   description:
     "Twijfel je tussen de Homey Bridge (€69) en de Homey Pro (€399)? Lees wat het verschil is, wat je wel en niet kunt met de Bridge en wanneer de Pro de moeite waard is.",
-  image: "/images/blog/home-assistant-vs-homey.png",
+  image: "/images/blog/homey-bridge-of-homey-pro.png",
   category: "Hubs",
   available: true,
   datePublished: "2025-08-01",
@@ -3254,7 +3254,7 @@ export const blogPosts = [
   title: "Wat is Thread? Het slimme protocol naast Matter uitgelegd",
   description:
     "Thread is een nieuw draadloos protocol voor smart home dat steeds meer wordt gebruikt naast Matter. Lees wat Thread is, hoe het werkt en of jij het nodig hebt.",
-  image: "/images/blog/wat-is-zigbee.png",
+  image: "/images/blog/wat-is-thread.png",
   category: "Protocollen",
   available: true,
   datePublished: "2025-09-05",
@@ -3329,7 +3329,7 @@ export const blogPosts = [
   title: "Apple HomeKit: smart home voor Apple-gebruikers uitgelegd",
   description:
     "Wat is Apple HomeKit en welke slimme producten werken ermee? Lees hoe je HomeKit instelt, welke apps je gebruikt en wat de voordelen zijn ten opzichte van Google Home en Amazon Alexa.",
-  image: "/images/blog/wat-is-matter.png",
+  image: "/images/blog/apple-homeKit.png",
   category: "Ecosystemen",
   available: true,
   datePublished: "2025-09-18",
