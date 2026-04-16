@@ -3,6 +3,7 @@ import { getProductBySlug, getAllProducts } from "@/data/products";
 import { getBolUrl } from "@/lib/bol-api";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import YouTubeFacade from "@/components/YouTubeFacade";
 
 export const dynamic = "force-dynamic";
 
@@ -163,30 +164,10 @@ export default function ProductPage({ params }) {
                 <h2>Video: zo werkt dit product</h2>
 
                 {youtubeEmbedUrl ? (
-                  <div
-                    style={{
-                      position: "relative",
-                      paddingBottom: "56.25%",
-                      height: 0,
-                      overflow: "hidden",
-                      borderRadius: "12px",
-                      marginTop: "1rem",
-                    }}
-                  >
-                    <iframe
-                      src={youtubeEmbedUrl}
-                      title={`Video van ${name}`}
-                      style={{
-                        position: "absolute",
-                        inset: 0,
-                        width: "100%",
-                        height: "100%",
-                        border: 0,
-                      }}
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                    />
-                  </div>
+                  <YouTubeFacade
+                    embedUrl={youtubeEmbedUrl}
+                    title={`Video van ${name}`}
+                  />
                 ) : (
                   <div style={{ marginTop: "1rem" }}>
                     <a

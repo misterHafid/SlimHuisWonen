@@ -3,7 +3,9 @@
     "allow": [
       "Bash(node -e \"require\\('./data/products.js'\\); console.log\\('OK'\\)\")",
       "Bash(node -e \"const {products} = require\\('./data/products.js'\\); console.log\\('Total products:', products.length\\)\")",
-      "Bash(node -e ':*)"
+      "Bash(node -e ':*)",
+      "Bash(node -e ' *)",
+      "Bash(rm \"c:\\\\Users\\\\hafid\\\\Documents\\\\project website\\\\slimhuiswonen-seo\\\\public\\\\images\\\\products\\\\eufy-c30-2k-draadloze-video-deurbel-2k-fhd-accu-zw.jpg\")"
     ]
   }
 }

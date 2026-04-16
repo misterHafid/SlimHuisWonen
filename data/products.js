@@ -1568,6 +1568,23 @@ export const products = [
   youtubeUrl: "https://www.youtube.com/shorts/sJRH_NO6iNY",
 },
 
+
+  {
+    slug: "eufy-c30-2k-draadloze-video-deurbel-2k-fhd-accu-zw",
+    brand: "eufy",
+    name: "eufy C30 2K Draadloze Video Deurbel 2K FHD - Accu Zwart + SD card 64 GB - geen Homebase nodig - Bundel",
+    category: "slimme-deurbellen",
+    image: "/images/products/eufy-c30-2k-draadloze-video-deurbel-2k-fhd-accu-zw.jpg",
+    description: "eufy C30 2K Draadloze Video Deurbel 2K FHD - Accu Zwart + SD card 64 GB - geen Homebase nodig - Bundel",
+    features: [],
+    affiliateUrl: "https://www.amazon.nl/eufy-Video-Doorbell-werkt-batterijen/dp/B0DHRYZ4JJ?tag=slimhuiswonen-21",
+    priceHint: "€119,00",
+    priceLastUpdated: "april 2026",
+    rating: 4.2,
+    pros: [],
+    cons: [],
+    forWho: [],
+  },
 ];
 
 /* =========================

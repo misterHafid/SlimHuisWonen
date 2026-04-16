@@ -43,9 +43,9 @@ export async function GET(request) {
       if (!idSeen.has(m[1])) { idSeen.add(m[1]); idOrder.push(m[1]); }
     }
 
-    // --- Afbeeldingen (s-bol.com, grote versie) ---
+    // --- Afbeeldingen (s-bol.com, originele URL bewaren) ---
     const images = [...html.matchAll(/https:\/\/media\.s-bol\.com\/[^\s"']+/g)]
-      .map((m) => m[0].replace(/\/\d+x\d+\.jpg$/, "/550x550.jpg")) // normaliseer naar grote versie
+      .map((m) => m[0]) // gebruik de exacte URL uit de HTML
       .filter((url, i, arr) => arr.indexOf(url) === i); // uniek
 
     // --- Namen via alt-tekst ---

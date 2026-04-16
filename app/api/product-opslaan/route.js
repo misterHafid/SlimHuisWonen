@@ -22,7 +22,7 @@ export async function POST(request) {
   }
 
   const body = await request.json();
-  const { slug, name, brand, category, description, price, rating, ean, bolUrl, amazonUrl, imageUrl, features = [] } = body;
+  const { slug, name, brand, category, description, price, rating, ean, amazonUrl, imageUrl, features = [] } = body;
 
   if (!slug || !name || !category) {
     return Response.json({ error: "slug, name en category zijn verplicht" }, { status: 400 });
@@ -35,18 +35,40 @@ export async function POST(request) {
   if (imageUrl) {
     try {
       const imgRes = await fetch(imageUrl, {
-        headers: { "User-Agent": "Mozilla/5.0" },
+        headers: {
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+          "Referer": "https://www.bol.com/",
+          "Accept": "image/avif,image/webp,image/apng,image/*,*/*;q=0.8",
+        },
       });
       if (imgRes.ok) {
-        const ext = imageUrl.includes(".png") ? "png" : "jpg";
+        const contentType = imgRes.headers.get("content-type") || "";
+        const ext = contentType.includes("png") || imageUrl.includes(".png") ? "png" : "jpg";
         const filename = `${slug}.${ext}`;
         const destPath = path.join(ROOT, "public", "images", "products", filename);
         const buffer = Buffer.from(await imgRes.arrayBuffer());
         fs.writeFileSync(destPath, buffer);
         localImage = `/images/products/${filename}`;
+        console.log("[product-opslaan] Afbeelding opgeslagen:", filename);
+      } else {
+        console.warn("[product-opslaan] Afbeelding HTTP", imgRes.status, imageUrl);
       }
     } catch (e) {
       console.warn("[product-opslaan] Afbeelding downloaden mislukt:", e.message);
+    }
+  }
+
+  // --- Amazon affiliate tag toevoegen ---
+  let finalAmazonUrl = amazonUrl || null;
+  if (finalAmazonUrl) {
+    try {
+      const u = new URL(finalAmazonUrl);
+      if (!u.searchParams.has("tag")) {
+        u.searchParams.set("tag", "slimhuiswonen-21");
+      }
+      finalAmazonUrl = u.toString();
+    } catch {
+      // URL parsen mislukt — gebruik origineel
     }
   }
 
@@ -63,7 +85,7 @@ export async function POST(request) {
     image: "${localImage || "/images/products/placeholder.png"}",
     description: "${(description || name).replace(/"/g, "'")}",
     features: [${features.map((f) => `"${String(f).replace(/"/g, "'")}"`).join(", ")}],
-    ${amazonUrl ? `affiliateUrl: "${amazonUrl}",` : ""}
+    ${finalAmazonUrl ? `affiliateUrl: "${finalAmazonUrl}",` : ""}
     ${priceHint ? `priceHint: "${priceHint}",` : ""}
     priceLastUpdated: "${new Date().toLocaleDateString("nl-NL", { month: "long", year: "numeric" })}",
     ${rating ? `rating: ${rating},` : ""}
