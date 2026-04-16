@@ -3654,4 +3654,142 @@ export const blogPosts = [
     </>
   ),
 },
+{
+  slug: "ikea-smart-home",
+  title: "IKEA smart home: alles over DIRIGERA, Tradfri en SOMRIG",
+  description:
+    "Alles over IKEA smart home in 2025. Hoe werkt DIRIGERA, welke producten zijn er en is het de moeite waard? Lees onze eerlijke beoordeling.",
+  image: "/images/blog/ikea.png",
+  category: "Merken",
+  available: true,
+  datePublished: "2026-04-16",
+
+  related: ["philips-hue-vs-ikea-tradfri", "wat-is-zigbee", "slimme-lampen-zonder-hub"],
+
+  faqSchema: {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Hoe werkt IKEA smart home?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "IKEA smart home werkt via de DIRIGERA hub en de IKEA Home smart app. Je koppelt lampen, rolgorlijnen, stekkers en sensoren aan de hub en bedient alles via de app of met stemassistenten als Google Home, Alexa of Apple HomeKit.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Heb je een hub nodig voor IKEA smart home?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Ja, voor de meeste functies heb je de IKEA DIRIGERA hub nodig. Zonder hub kun je lampen wel bedienen via Bluetooth, maar dan mis je automatisering, afstandsbediening en koppeling met andere systemen.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Werkt IKEA smart home met Google Home en Alexa?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Ja. De IKEA DIRIGERA hub is compatibel met Google Home, Amazon Alexa, Apple HomeKit en Siri. Via Matter kun je IKEA-apparaten ook koppelen aan andere platforms.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Is IKEA smart home goed?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Voor beginners en budgetbewuste kopers is IKEA smart home een uitstekende keuze. De producten zijn betaalbaar, betrouwbaar en goed geïntegreerd. Voor geavanceerde automatisering of een groot systeem kies je beter voor Philips Hue, Aqara of Home Assistant.",
+        },
+      },
+    ],
+  },
+
+  content: (
+    <>
+      <p className="section-intro">
+        IKEA verkoopt al jaren slimme apparaten — van lampen tot rolgorlijnen
+        en slimme stekkers. Met de DIRIGERA hub heeft het merk een moderne
+        basis gelegd. Maar is IKEA smart home de moeite waard, en hoe begin je?
+      </p>
+
+      <h2>Wat is IKEA DIRIGERA?</h2>
+      <p>
+        DIRIGERA is de centrale hub van het IKEA smart home-systeem. Het
+        vervangt de oude Tradfri gateway en ondersteunt Zigbee én Matter.
+        Via de <strong>IKEA Home smart</strong> app koppel je alle IKEA-apparaten
+        en maak je automatiseringen en routines.
+      </p>
+      <ul>
+        <li><strong>Protocol:</strong> Zigbee 3.0 + Matter (Thread border router)</li>
+        <li><strong>App:</strong> IKEA Home smart (iOS en Android)</li>
+        <li><strong>Stemassistenten:</strong> Google Home, Alexa, Apple HomeKit, Siri</li>
+        <li><strong>Prijs DIRIGERA hub:</strong> ~€70</li>
+      </ul>
+
+      <h2>Welke IKEA smart home producten zijn er?</h2>
+      <p>
+        Het IKEA smart home-assortiment is verrassend breed:
+      </p>
+      <ul>
+        <li><strong>Verlichting (TRÅDFRI / RODRET):</strong> slimme lampen, spots en ledstrips in alle soorten</li>
+        <li><strong>Rolgorlijnen (FYRTUR / KADRILJ):</strong> automatisch op en neer via app of routine</li>
+        <li><strong>Slimme stekkers (TRETAKT):</strong> schakel apparaten op afstand en meet verbruik</li>
+        <li><strong>Luchtreinigers (STARKVIND):</strong> automatisch aan op basis van luchtkwaliteit</li>
+        <li><strong>Bewegingssensoren en afstandsbedieningen:</strong> voor automatisering zonder stemassistent</li>
+        <li><strong>SOMRIG speaker:</strong> Bluetooth-speaker met ingebouwde verlichting</li>
+      </ul>
+
+      <h2>Hoe begin je met IKEA smart home?</h2>
+      <p>
+        De eenvoudigste manier om te starten:
+      </p>
+      <ol>
+        <li>Koop de <strong>DIRIGERA hub</strong> (~€70) en verbind hem met je router</li>
+        <li>Download de <strong>IKEA Home smart app</strong></li>
+        <li>Voeg je eerste apparaat toe — bijv. een TRÅDFRI lamp (~€10-€15)</li>
+        <li>Koppel eventueel aan Google Home of Alexa voor spraakbediening</li>
+        <li>Maak routines aan — bijv. lampen dimmen om 22:00</li>
+      </ol>
+      <p>
+        Wil je geen hub? Veel IKEA-lampen werken ook via Bluetooth rechtstreeks
+        met de app — maar dan heb je geen afstandsbediening buiten huis en
+        geen automatisering.
+      </p>
+
+      <h2>IKEA smart home vs Philips Hue</h2>
+      <p>
+        De grote concurrent is Philips Hue. Het verschil in één zin:
+        IKEA is de helft goedkoper, Hue is de helft beter. Dat klinkt simpel,
+        en voor de meeste gebruikers klopt het ook.
+      </p>
+      <ul>
+        <li><strong>Prijs losse lamp:</strong> IKEA ~€10 vs Hue ~€20-€25</li>
+        <li><strong>Hub:</strong> DIRIGERA €70 vs Hue Bridge €60</li>
+        <li><strong>Kleurweergave:</strong> IKEA goed, Hue uitstekend</li>
+        <li><strong>App-ervaring:</strong> IKEA voldoende, Hue uitstekend</li>
+        <li><strong>Assortiment:</strong> IKEA kleiner, Hue veel groter</li>
+      </ul>
+      <p>
+        Lees onze uitgebreide vergelijking:{" "}
+        <Link href="/blog/philips-hue-vs-ikea-tradfri">
+          Philips Hue vs IKEA Tradfri
+        </Link>
+        .
+      </p>
+
+      <h2>Is IKEA smart home de moeite waard?</h2>
+      <p>
+        Voor wie betaalbaar wil beginnen met smart home is IKEA een uitstekende
+        keuze. De producten werken betrouwbaar, de installatie is eenvoudig
+        en de prijzen zijn laag. Wil je meer geavanceerde automatisering of
+        een groter systeem, dan zijn merken als{" "}
+        <Link href="/blog/aqara-vs-tapo">Aqara of Tapo</Link> of een platform
+        als{" "}
+        <Link href="/blog/home-assistant-vs-homey">Home Assistant</Link> een
+        betere basis.
+      </p>
+    </>
+  ),
+},
 ];
