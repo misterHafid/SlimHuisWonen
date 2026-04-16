@@ -9,6 +9,7 @@ export const blogPosts = [
   image: "/images/blog/wat-is-zigbee.png",
   category: "Protocollen",
   available: true,
+  datePublished: "2025-01-10",
 
   related: [
     "zigbee-vs-zwave-vs-matter-vs-wifi",
@@ -143,6 +144,7 @@ export const blogPosts = [
   image: "/images/blog/wat-is-matter.png",
   category: "Protocollen",
   available: true,
+  datePublished: "2025-01-15",
 
   related: [
     "wat-is-zigbee",
@@ -290,6 +292,7 @@ export const blogPosts = [
   image: "/images/blog/zigbee-vs-zwave-vs-matter-vs-wifi.png",
   category: "Protocollen",
   available: true,
+  datePublished: "2025-01-22",
 
   related: [
     "wat-is-zigbee",
@@ -448,6 +451,7 @@ export const blogPosts = [
   image: "/images/blog/aqara-vs-tapo.png",
   category: "Merken",
   available: true,
+  datePublished: "2025-02-05",
 
   related: [
     "wat-is-zigbee",
@@ -551,6 +555,7 @@ export const blogPosts = [
   image: "/images/blog/beste-smart-home-hub.png",
   category: "Hubs",
   available: true,
+  datePublished: "2025-02-12",
 
   related: [
     "home-assistant-vs-homey",
@@ -662,6 +667,7 @@ export const blogPosts = [
   image: "/images/blog/home-assistant-vs-homey.png",
   category: "Hubs",
   available: true,
+  datePublished: "2025-02-20",
 
   related: [
     "beste-smart-home-hub",
@@ -857,6 +863,7 @@ export const blogPosts = [
   image: "/images/blog/beste-slimme-stekkers.png",
   category: "Smart Home",
   available: true,
+  datePublished: "2025-03-01",
 
   related: [
     "wat-is-zigbee",
@@ -1015,6 +1022,7 @@ export const blogPosts = [
   image: "/images/blog/beste-slimme-verlichting.png",
   category: "Smart Home",
   available: true,
+  datePublished: "2025-03-08",
 
   related: [
     "wat-is-zigbee",
@@ -1189,6 +1197,7 @@ export const blogPosts = [
   image: "/images/blog/beste-slimme-camera.png",
   category: "Smart Home",
   available: true,
+  datePublished: "2025-03-15",
 
   related: [
     "beste-slimme-deurbel",
@@ -1367,6 +1376,7 @@ export const blogPosts = [
   image: "/images/blog/beste-slimme-deurbel.png",
   category: "Koopgids",
   available: true,
+  datePublished: "2025-03-22",
 
   related: [
     "beste-slimme-camera",
@@ -1513,6 +1523,7 @@ export const blogPosts = [
   image: "/images/blog/klikaanklikuit-smart-home.png",
   category: "Smart Home",
   available: true,
+  datePublished: "2025-04-02",
 
   related: [
     "beste-smart-home-hub",
@@ -1638,6 +1649,7 @@ export const blogPosts = [
   image: "/images/blog/huisdieren.png",
   category: "Smart Home",
   available: true,
+  datePublished: "2025-04-10",
 
   related: [
     "beste-slimme-camera",
@@ -1781,6 +1793,7 @@ export const blogPosts = [
   image: "/images/blog/kinderen.png",
   category: "Smart Home",
   available: true,
+  datePublished: "2025-04-18",
 
   related: [
     "beste-slimme-camera",
@@ -1911,6 +1924,7 @@ export const blogPosts = [
   image: "/images/blog/beste-slimme-sensoren.png",
   category: "Smart Home",
   available: true,
+  datePublished: "2025-05-01",
 
   related: [
     "beste-smart-home-hub",
@@ -2077,6 +2091,7 @@ export const blogPosts = [
   image: "/images/blog/beste-slimme-thermostaat.png",
   category: "Vergelijking",
   available: true,
+  datePublished: "2025-05-12",
 
   related: [
     "home-assistant-vs-homey",
@@ -2233,6 +2248,7 @@ export const blogPosts = [
   image: "/images/blog/slimme-lampen-zonder-hub.png",
   category: "Verlichting",
   available: true,
+  datePublished: "2025-05-20",
 
   related: [
     "wat-is-zigbee",
@@ -2373,6 +2389,7 @@ export const blogPosts = [
   image: "/images/blog/google-home-vs-alexa.png",
   category: "Vergelijking",
   available: true,
+  datePublished: "2025-06-05",
 
   related: [
     "home-assistant-vs-homey",
@@ -2524,6 +2541,7 @@ export const blogPosts = [
   image: "/images/blog/philips-hue-alternatieven.png",
   category: "Verlichting",
   available: true,
+  datePublished: "2025-06-18",
 
   related: [
     "wat-is-slimme-verlichting",
@@ -2664,6 +2682,7 @@ export const blogPosts = [
   image: "/images/blog/smart-home-energiebesparing.png",
   category: "Energie",
   available: true,
+  datePublished: "2025-07-02",
 
   related: [
     "beste-slimme-thermostaat",
@@ -2807,6 +2826,7 @@ export const blogPosts = [
   image: "/images/blog/beste-slimme-thermostaat.png",
   category: "Energie",
   available: true,
+  datePublished: "2025-07-15",
   datePublished: "2026-04-12",
 
   related: ["beste-slimme-thermostaat", "smart-home-energiebesparing"],
@@ -2970,6 +2990,7 @@ export const blogPosts = [
   image: "/images/blog/home-assistant-vs-homey.png",
   category: "Hubs",
   available: true,
+  datePublished: "2025-08-01",
   datePublished: "2026-04-12",
 
   related: ["home-assistant-vs-homey", "beste-smart-home-hub", "wat-is-zigbee"],
@@ -3100,9 +3121,10 @@ export const blogPosts = [
   title: "Philips Hue vs IKEA Tradfri: welke slimme verlichting kies je?",
   description:
     "Philips Hue of IKEA Tradfri? Vergelijk prijs, kwaliteit, app-ervaring en compatibiliteit. Lees welke slimme verlichting het beste bij jou past.",
-  image: "/images/blog/beste-slimme-verlichting.png",
+  image: "/images/blog/philips-hue-vs-ikea-tradfri.png",
   category: "Verlichting",
   available: true,
+  datePublished: "2025-08-20",
   datePublished: "2026-04-12",
 
   related: ["beste-slimme-verlichting", "wat-is-zigbee", "slimme-lampen-zonder-hub"],
@@ -3235,6 +3257,7 @@ export const blogPosts = [
   image: "/images/blog/wat-is-zigbee.png",
   category: "Protocollen",
   available: true,
+  datePublished: "2025-09-05",
   datePublished: "2026-04-12",
 
   related: ["wat-is-matter", "zigbee-vs-zwave-vs-matter-vs-wifi", "beste-smart-home-hub"],
@@ -3309,6 +3332,7 @@ export const blogPosts = [
   image: "/images/blog/wat-is-matter.png",
   category: "Ecosystemen",
   available: true,
+  datePublished: "2025-09-18",
   datePublished: "2026-04-12",
 
   related: ["wat-is-matter", "google-home-vs-alexa", "beste-smart-home-hub"],
@@ -3385,6 +3409,7 @@ export const blogPosts = [
   image: "/images/blog/smart-home-energiebesparing.png",
   category: "Energie",
   available: true,
+  datePublished: "2025-10-02",
   datePublished: "2026-04-12",
 
   related: ["smart-home-energiebesparing", "beste-energie-monitor"],
@@ -3489,6 +3514,7 @@ export const blogPosts = [
   image: "/images/blog/beste-slimme-deurbel.png",
   category: "Beveiliging",
   available: true,
+  datePublished: "2025-10-20",
   datePublished: "2026-04-12",
 
   related: ["beste-slimme-deurbel", "beste-slimme-camera"],
@@ -3587,6 +3613,7 @@ export const blogPosts = [
   image: "/images/blog/google-home-vs-alexa.png",
   category: "Ecosystemen",
   available: true,
+  datePublished: "2025-11-05",
   datePublished: "2026-04-12",
 
   related: ["google-home-vs-alexa", "homekit-uitleg", "beste-smart-home-hub"],
@@ -3662,6 +3689,7 @@ export const blogPosts = [
   image: "/images/blog/ikea.png",
   category: "Merken",
   available: true,
+  datePublished: "2026-04-16",
   datePublished: "2026-04-16",
 
   related: ["philips-hue-vs-ikea-tradfri", "wat-is-zigbee", "slimme-lampen-zonder-hub"],
@@ -3788,6 +3816,446 @@ export const blogPosts = [
         als{" "}
         <Link href="/blog/home-assistant-vs-homey">Home Assistant</Link> een
         betere basis.
+      </p>
+    </>
+  ),
+},
+{
+  slug: "slimme-thermostaat-huurwoning",
+  title: "Slimme thermostaat in een huurwoning: wat mag en wat werkt?",
+  description:
+    "Slimme thermostaat in een huurwoning plaatsen — mag dat? Welke modellen werken zonder boren of toestemming? Lees de praktische gids voor huurders.",
+  image: "/images/blog/slimme-thermostaat-huurwoning.png",
+  category: "Thermostaten",
+  available: true,
+  datePublished: "2026-04-16",
+
+  related: ["beste-slimme-thermostaat", "slimme-radiatorkraan", "smart-home-energiebesparing"],
+
+  faqSchema: {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Mag je een slimme thermostaat plaatsen in een huurwoning?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "In de meeste gevallen wel, zolang je niets aan de bedrading beschadigt en alles terugplaatst bij vertrek. Veel slimme thermostaten vervangen alleen de bestaande thermostaat en vereisen geen boor- of installatiewerk. Check altijd je huurcontract of vraag toestemming aan je verhuurder.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Welke slimme thermostaat werkt zonder toestemming?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Thermostaten zoals de Tado V3+ en Netatmo Slimme Thermostaat zijn eenvoudig zelf te installeren en laten geen schade achter. Ze werken op de bestaande bedrading en zijn reversibel — je zet de originele thermostaat er gewoon weer op bij vertrek.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Hoeveel bespaar je met een slimme thermostaat in een huurwoning?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Gemiddeld 10-20% op je verwarmingskosten. Bij een gasrekening van €1.200 per jaar is dat €120-240 besparing. De thermostaat verdient zichzelf dus in 1-2 jaar terug.",
+        },
+      },
+    ],
+  },
+
+  content: (
+    <>
+      <p className="section-intro">
+        Huur je een woning en wil je toch een slimme thermostaat? Goed nieuws:
+        dat kan in de meeste gevallen gewoon — zonder toestemming van je verhuurder
+        te hoeven vragen en zonder schade aan de woning.
+      </p>
+
+      <h2>Mag je een slimme thermostaat installeren als huurder?</h2>
+      <p>
+        Juridisch gezien mag je als huurder kleine aanpassingen doen aan je
+        woning zolang je niets beschadigt en alles bij vertrek terugplaatst.
+        Een slimme thermostaat valt hier doorgaans onder — je vervangt simpelweg
+        de bestaande thermostaat en gebruikt dezelfde bedrading.
+      </p>
+      <p>
+        Twijfel je? Stuur je verhuurder een korte e-mail. De meeste verhuurders
+        geven direct toestemming zodra duidelijk is dat er geen boor- of
+        installatiewerk nodig is.
+      </p>
+
+      <h2>Welke thermostaten werken goed in een huurwoning?</h2>
+      <p>
+        De beste keuze voor huurders zijn thermostaten die:
+      </p>
+      <ul>
+        <li>Zelf te installeren zijn (geen monteur nodig)</li>
+        <li>Geen nieuwe bedrading vereisen</li>
+        <li>Makkelijk terug te plaatsen zijn bij vertrek</li>
+        <li>Werken met OpenTherm of aan/uit-systemen</li>
+      </ul>
+
+      <h3>Tado Slimme Thermostaat V3+</h3>
+      <p>
+        De <strong>Tado V3+</strong> is veruit de populairste keuze voor huurders.
+        Installatie duurt 15-30 minuten, er is een stap-voor-stap app die je
+        door de installatie leidt en de thermostaat past op bijna elk
+        verwarmingssysteem. Tado werkt met OpenTherm én aan/uit-systemen.
+      </p>
+      <ul>
+        <li>Prijs: ~€80-€110</li>
+        <li>Installatie: zelf, ~20 minuten</li>
+        <li>Besparing: tot 22% via geofencing en open-raam detectie</li>
+        <li>Compatibel: Google Home, Alexa, Apple HomeKit</li>
+      </ul>
+
+      <h3>Netatmo Slimme Thermostaat</h3>
+      <p>
+        De <strong>Netatmo</strong> is een andere goede optie. Strak design,
+        lokale verwerking (geen verplicht cloud-abonnement) en ook zelf
+        installeerbaar. Werkt via de Netatmo app of via Apple HomeKit.
+      </p>
+      <ul>
+        <li>Prijs: ~€100-€130</li>
+        <li>Installatie: zelf, ~30 minuten</li>
+        <li>Voordeel: geen maandelijkse abonnementskosten</li>
+      </ul>
+
+      <h2>Slimme radiatorknoppen: alternatief voor huurders</h2>
+      <p>
+        Als je geen thermostaat wilt vervangen, zijn{" "}
+        <Link href="/blog/slimme-radiatorkraan">slimme radiatorknoppen</Link>{" "}
+        een nog laagdrempeligere optie. Je schroeft de bestaande knop af en
+        zet er een slimme voor terug — geen bedrading, geen toestemming nodig.
+        Merken als Tado, Aqara en Eve zijn hier populair.
+      </p>
+
+      <h2>Hoeveel bespaar je?</h2>
+      <p>
+        Een slimme thermostaat levert gemiddeld <strong>10-20% besparing</strong> op
+        je verwarmingskosten. Bij een gasrekening van €1.200 per jaar is dat
+        €120-240. De meeste thermostaten verdienen zichzelf in 1-2 jaar terug.
+      </p>
+      <p>
+        Wil je weten hoeveel je precies verbruikt?{" "}
+        <Link href="/blog/p1-meter-uitleg">Een P1-meter</Link> koppelt aan
+        je slimme meter en laat je exact zien wanneer je het meeste verbruikt.
+      </p>
+
+      <h2>Conclusie: de beste keuze voor huurders</h2>
+      <p>
+        Voor de meeste huurwoningen is de <strong>Tado V3+</strong> de beste
+        keuze — breed compatibel, eenvoudig te installeren en goed bewezen.
+        Wil je geen abonnement, kies dan de Netatmo. En als je echt niets aan
+        de thermostaat wilt veranderen: begin met slimme radiatorknoppen.
+      </p>
+      <p>
+        Meer weten? Lees onze uitgebreide{" "}
+        <Link href="/blog/beste-slimme-thermostaat">
+          vergelijking van slimme thermostaten
+        </Link>
+        .
+      </p>
+    </>
+  ),
+},
+{
+  slug: "slim-huis-budget",
+  title: "Slim huis met een klein budget: starten voor minder dan €100",
+  description:
+    "Smart home hoeft niet duur te zijn. Met minder dan €100 heb je al een merkbaar slimmer huis. Ontdek de beste budgetproducten en de slimste volgorde om te beginnen.",
+  image: "/images/blog/slim-huis-budget.png",
+  category: "Beginners",
+  available: true,
+  datePublished: "2026-04-16",
+
+  related: ["slimme-lampen-zonder-hub", "wat-is-een-slimme-stekker", "beste-smart-home-hub"],
+
+  faqSchema: {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Wat heb je minimaal nodig voor een slim huis?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Je hebt minimaal een smart home apparaat nodig dat werkt via Wi-Fi of Bluetooth — een slimme lamp of stekker is de eenvoudigste start. Je hoeft geen hub te kopen als je begint met Wi-Fi-producten van Tapo of IKEA.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Wat is de goedkoopste manier om te beginnen met smart home?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Begin met een slimme stekker (~€15) of een slimme lamp (~€10-€15). Die installeer je in vijf minuten, vereisen geen hub en geven je direct het gevoel van automatisering — een lamp die zichzelf uitdoet of een apparaat dat je op afstand bedient.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Welke smart home producten zijn het goedkoopst?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "De goedkoopste betrouwbare producten zijn Tapo slimme stekkers (~€15), IKEA TRÅDFRI lampen (~€10-€12) en Aqara of Xiaomi sensoren (~€15-€20). Voor een complete starterset inclusief hub ben je al klaar voor €50-€80.",
+        },
+      },
+    ],
+  },
+
+  content: (
+    <>
+      <p className="section-intro">
+        Smart home staat bekend als duur. Maar dat hoeft het niet te zijn.
+        Met een budget van €50-€100 heb je al een merkbaar slimmer huis —
+        lichten die automatisch aangaan, apparaten die je op afstand bedient
+        en een energieverbruik dat je kunt volgen.
+      </p>
+
+      <h2>Hoe begin je slim en goedkoop?</h2>
+      <p>
+        De truc is om te beginnen met één probleem dat je wilt oplossen,
+        niet met een compleet systeem. Stel jezelf de vraag: wat irriteert
+        me dagelijks? Licht dat aan blijft? Apparaten die in standby staan?
+        Begin dáár.
+      </p>
+
+      <h2>Starterset voor onder de €50</h2>
+      <p>
+        Dit zijn de beste eerste aankopen:
+      </p>
+      <ul>
+        <li>
+          <strong>Tapo P115 slimme stekker (~€15-€20)</strong> — meet energieverbruik
+          en schakel op afstand. Ideaal voor tv, opladers of een lamp.
+          Geen hub nodig, werkt via Wi-Fi.
+        </li>
+        <li>
+          <strong>Tapo L530 slimme lamp (~€12-€15)</strong> — kleur en dimbaar,
+          werkt direct met de Tapo app. Geen bridge nodig.
+        </li>
+        <li>
+          <strong>IKEA TRÅDFRI lamp (~€10-€12)</strong> — degelijke Zigbee-lamp,
+          goedkoper dan Hue. Werkt via Bluetooth of de DIRIGERA hub.
+        </li>
+      </ul>
+
+      <h2>Starterset voor €50-€100</h2>
+      <p>
+        Met wat meer budget kun je een mini-systeem opzetten:
+      </p>
+      <ul>
+        <li>
+          <strong>Google Nest Mini (~€30-€40)</strong> of Amazon Echo Dot (~€25-€35)
+          — spraakbediening voor alles wat je al hebt. Zet lampen aan met je stem.
+        </li>
+        <li>
+          <strong>Aqara Motion Sensor (~€15-€20)</strong> — lamp gaat automatisch
+          aan als je de kamer inloopt. Werkt met Zigbee (hub nodig) of via HomeKit.
+        </li>
+        <li>
+          <strong>Slimme deurbel (~€30-€50)</strong> — zie wie er aanbelt via je
+          telefoon, ook als je niet thuis bent.
+        </li>
+      </ul>
+
+      <h2>Moet je een hub kopen?</h2>
+      <p>
+        Niet meteen. Wi-Fi-producten van Tapo, Shelly of Sonoff werken zonder
+        hub rechtstreeks via je router. Dat is goedkoper om mee te beginnen.
+      </p>
+      <p>
+        Als je later Zigbee-apparaten wilt toevoegen (goedkoper per stuk,
+        zuiniger, betrouwbaarder bij veel apparaten), dan pas je een hub nodig.
+        Lees meer in onze gids:{" "}
+        <Link href="/blog/beste-smart-home-hub">beste smart home hub</Link>.
+      </p>
+
+      <h2>Slimme volgorde van aanschaffen</h2>
+      <ol>
+        <li>
+          <strong>Start met één slimme stekker of lamp</strong> — leer hoe een
+          app werkt, hoe routines in elkaar zitten.
+        </li>
+        <li>
+          <strong>Voeg spraakbediening toe</strong> — een Alexa of Google Nest
+          maakt het dagelijks gebruik veel prettiger.
+        </li>
+        <li>
+          <strong>Automatiseer één ding</strong> — bijv. een lamp die aan gaat
+          bij zonsondergang, of een stekker die automatisch uitschakelt.
+        </li>
+        <li>
+          <strong>Overweeg een hub</strong> — als je tien of meer apparaten hebt,
+          maakt een Zigbee-hub alles stabieler en goedkoper.
+        </li>
+      </ol>
+
+      <h2>Wat kost een volledig slim huis?</h2>
+      <p>
+        Een "volledig" slim huis — verlichting in elke kamer, thermostaat,
+        sensoren, camera en deurbel — kost realistisch gezien €300-€600.
+        Maar je bouwt het op in stappen. De meeste mensen starten met €50-€100
+        en voegen elk kwartaal iets nieuws toe.
+      </p>
+      <p>
+        Bekijk onze{" "}
+        <Link href="/blog/slimme-lampen-zonder-hub">
+          gids over slimme lampen zonder hub
+        </Link>{" "}
+        als je nog geen hub wilt kopen.
+      </p>
+    </>
+  ),
+},
+{
+  slug: "home-assistant-beginners",
+  title: "Home Assistant voor beginners: zo start je zonder technische kennis",
+  description:
+    "Home Assistant klinkt ingewikkeld maar is goed te doen voor beginners. Lees hoe je start, welk apparaat je nodig hebt en hoe je de eerste automatisering maakt.",
+  image: "/images/blog/home-assistant-beginners.png",
+  category: "Home Assistant",
+  available: true,
+  datePublished: "2026-04-16",
+
+  related: ["home-assistant-vs-homey", "beste-smart-home-hub", "wat-is-zigbee"],
+
+  faqSchema: {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Is Home Assistant moeilijk voor beginners?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Home Assistant heeft een leercurve, maar is goed te doen voor beginners die stap voor stap werken. Met Home Assistant Green of Yellow heb je een kant-en-klaar apparaat. De installatie duurt 20-30 minuten en de basisautomatiseringen zijn eenvoudig via de visuele interface.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Welk apparaat heb je nodig voor Home Assistant?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "De makkelijkste optie is Home Assistant Green (~€90) — dat is een plug-and-play apparaatje waarmee je direct kunt beginnen. Alternatieven zijn de Raspberry Pi 4 of Home Assistant Yellow (met ingebouwde Zigbee-chip).",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Wat kan Home Assistant dat Homey niet kan?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Home Assistant is volledig lokaal (geen cloud), open-source, ondersteunt meer dan 3.000 integraties en is volledig gratis. Homey is gebruiksvriendelijker maar kost een maandelijks abonnement en is minder flexibel. Home Assistant is de keuze als privacy, controle en uitbreidbaarheid belangrijk zijn.",
+        },
+      },
+    ],
+  },
+
+  content: (
+    <>
+      <p className="section-intro">
+        Home Assistant is de krachtigste gratis smart home-hub ter wereld.
+        Lokaal, privacyvriendelijk, gratis en met meer dan 3.000 integraties.
+        Maar klinkt het niet ingewikkeld? Dat valt mee — zeker als je weet
+        waar je begint.
+      </p>
+
+      <h2>Wat is Home Assistant?</h2>
+      <p>
+        Home Assistant is open-source software die op een mini-computer draait
+        bij jou thuis. Alle communicatie gaat lokaal — er gaat niets naar de
+        cloud, tenzij jij dat wilt. Het systeem ondersteunt vrijwel elk smart
+        home-apparaat, van Zigbee en Z-Wave tot Philips Hue, IKEA, Nest en
+        honderden andere merken.
+      </p>
+      <p>
+        Het grote verschil met Homey of Google Home: jij hebt volledige
+        controle. Alles werkt nog als het internet uitvalt.
+      </p>
+
+      <h2>Wat heb je nodig om te starten?</h2>
+
+      <h3>Optie 1 — Home Assistant Green (aanbevolen voor beginners)</h3>
+      <p>
+        De <strong>Home Assistant Green</strong> (~€90) is een kant-en-klaar
+        apparaatje. Stekker in, netwerkkabel erin, browser openen en je bent
+        aan de slag. Geen technische kennis nodig.
+      </p>
+      <ul>
+        <li>Prijs: ~€90</li>
+        <li>Installatie: plug-and-play, 20 minuten</li>
+        <li>Zigbee: niet ingebouwd (wel via USB-dongle toe te voegen)</li>
+      </ul>
+
+      <h3>Optie 2 — Home Assistant Yellow</h3>
+      <p>
+        De <strong>Home Assistant Yellow</strong> (~€130-€160) heeft een
+        ingebouwde Zigbee- en Thread-chip. Ideaal als je direct Zigbee-apparaten
+        wilt koppelen zonder extra USB-dongle.
+      </p>
+
+      <h3>Optie 3 — Raspberry Pi 4</h3>
+      <p>
+        De goedkoopste optie is een <strong>Raspberry Pi 4</strong> met een SD-kaart.
+        Kost ~€50-€60 maar vereist meer technische kennis. Niet aanbevolen als
+        eerste stap.
+      </p>
+
+      <h2>Installatie stap voor stap</h2>
+      <ol>
+        <li>Verbind Home Assistant Green met stroom en netwerk</li>
+        <li>Open <strong>homeassistant.local:8123</strong> in je browser</li>
+        <li>Maak een account aan — dit is je admin-account</li>
+        <li>Wacht op de eerste update (~5-10 minuten)</li>
+        <li>Ga naar <em>Instellingen → Apparaten &amp; Diensten</em></li>
+        <li>Klik <em>Integratie toevoegen</em> en zoek je apparaat</li>
+      </ol>
+
+      <h2>Je eerste automatisering</h2>
+      <p>
+        Ga naar <em>Instellingen → Automatiseringen</em> en klik op
+        <em>Automatisering aanmaken</em>. Een eenvoudige eerste automatisering:
+      </p>
+      <ul>
+        <li><strong>Trigger:</strong> Zonsondergang</li>
+        <li><strong>Actie:</strong> Verlichting woonkamer aan (50% dimbaar)</li>
+      </ul>
+      <p>
+        Dat is het. De lamp gaat elke avond automatisch aan bij zonsondergang —
+        zonder dat je ook maar iets hoeft te doen.
+      </p>
+
+      <h2>Home Assistant vs Homey — wat kies je?</h2>
+      <p>
+        Wil je maximale controle en privacy, en vind je het leuk om te
+        experimenteren? Kies Home Assistant. Wil je iets dat gewoon werkt
+        zonder technische kennis? Kies Homey.
+      </p>
+      <p>
+        Lees onze uitgebreide vergelijking:{" "}
+        <Link href="/blog/home-assistant-vs-homey">
+          Home Assistant vs Homey
+        </Link>
+        .
+      </p>
+
+      <h2>Zigbee toevoegen aan Home Assistant</h2>
+      <p>
+        Met een USB Zigbee-dongle (bijv. Sonoff Zigbee 3.0 USB Dongle Plus, ~€20)
+        kun je Zigbee-apparaten direct koppelen. Installeer de{" "}
+        <em>Zigbee Home Automation (ZHA)</em> integratie in Home Assistant —
+        dat is de makkelijkste aanpak voor beginners.
+      </p>
+      <p>
+        Meer over Zigbee:{" "}
+        <Link href="/blog/wat-is-zigbee">Wat is Zigbee?</Link>
+      </p>
+
+      <h2>Is Home Assistant iets voor jou?</h2>
+      <p>
+        Als je bereid bent een middag te investeren in de setup, is Home
+        Assistant een van de beste beslissingen die je kunt maken voor je
+        smart home. Het systeem groeit mee, werkt altijd lokaal en kost na
+        de aanschaf niets meer.
       </p>
     </>
   ),

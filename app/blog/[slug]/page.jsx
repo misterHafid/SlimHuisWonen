@@ -30,11 +30,23 @@ export async function generateMetadata({ params }) {
       title: post.title,
       description: post.description,
       url: `https://slimhuiswonen.nl/blog/${post.slug}`,
+      type: "article",
+      ...(post.datePublished && { publishedTime: post.datePublished }),
+      ...(post.dateModified && { modifiedTime: post.dateModified }),
       images: [
         {
           url: `https://slimhuiswonen.nl${post.image}`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
         },
       ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
+      images: [`https://slimhuiswonen.nl${post.image}`],
     },
   };
 }
