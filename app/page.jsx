@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import { getProductBySlug } from "@/data/products";
+import { getBolUrl } from "@/lib/bol-api";
 
 const POPULAIRE_SLUGS = [
   "philips-hue-white-ambiance-starterkit",
@@ -25,7 +26,7 @@ function PopulaireProducten() {
       <div className="container">
         <h2>Populaire producten</h2>
         <p className="section-intro">
-          Direct bestellen via Amazon — meest bekeken producten op SlimHuisWonen.
+          Bestel via Amazon of bol.com — meest bekeken producten op SlimHuisWonen.
         </p>
 
         <div
@@ -35,85 +36,93 @@ function PopulaireProducten() {
             gap: "1rem",
           }}
         >
-          {producten.map((p) => (
-            <article
-              key={p.slug}
-              style={{
-                border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: "14px",
-                padding: "1rem",
-                background: "rgba(255,255,255,0.02)",
-                display: "flex",
-                flexDirection: "column",
-                gap: "0.5rem",
-              }}
-            >
-              {p.image && (
-                <div
-                  style={{
-                    position: "relative",
-                    aspectRatio: "1 / 1",
-                    background: "#0b0f1a",
-                    borderRadius: "10px",
-                    overflow: "hidden",
-                  }}
-                >
-                  <Image
-                    src={p.image}
-                    alt={p.name}
-                    fill
-                    sizes="(max-width: 640px) 50vw, 200px"
-                    style={{ objectFit: "contain" }}
-                  />
-                </div>
-              )}
-
-              <div style={{ fontSize: "0.75rem", opacity: 0.55 }}>{p.brand}</div>
-              <h3 style={{ margin: 0, fontSize: "0.9rem", lineHeight: 1.3 }}>{p.name}</h3>
-
-              {p.priceHint && (
-                <p style={{ margin: 0, fontSize: "0.85rem", opacity: 0.7 }}>{p.priceHint}</p>
-              )}
-
-              <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem", marginTop: "auto" }}>
-                {p.affiliateUrl && (
-                  <a
-                    href={p.affiliateUrl}
-                    target="_blank"
-                    rel="noopener noreferrer sponsored"
-                    style={{
-                      display: "block",
-                      padding: "0.45rem 0.75rem",
-                      borderRadius: "8px",
-                      background: "#f59e0b",
-                      color: "#1a1a1a",
-                      fontWeight: 700,
-                      fontSize: "0.8rem",
-                      textDecoration: "none",
-                      textAlign: "center",
-                    }}
-                  >
-                    Bekijk prijs →
-                  </a>
-                )}
+          {producten.map((p) => {
+            const bolUrl = getBolUrl(p);
+            return (
+              <article
+                key={p.slug}
+                style={{
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  borderRadius: "14px",
+                  padding: "1rem",
+                  background: "rgba(255,255,255,0.02)",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.5rem",
+                  position: "relative",
+                }}
+              >
+                {/* Stretched link — hele kaart klikbaar */}
                 <Link
                   href={`/producten/${p.slug}`}
-                  style={{
-                    display: "block",
-                    padding: "0.4rem 0.75rem",
-                    borderRadius: "8px",
-                    border: "1px solid rgba(255,255,255,0.12)",
-                    fontSize: "0.8rem",
-                    textDecoration: "none",
-                    textAlign: "center",
-                    opacity: 0.75,
-                  }}
-                >
-                  Meer info
-                </Link>
-              </div>
-            </article>
-          ))}
+                  aria-label={p.name}
+                  style={{ position: "absolute", inset: 0, zIndex: 0 }}
+                  tabIndex={-1}
+                />
+
+                {p.image && (
+                  <div
+                    style={{
+                      position: "relative",
+                      aspectRatio: "1 / 1",
+                      background: "#fff",
+                      borderRadius: "10px",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <Image
+                      src={p.image}
+                      alt={p.name}
+                      fill
+                      sizes="(max-width: 640px) 50vw, 200px"
+                      style={{ objectFit: "contain", padding: "6px" }}
+                    />
+                  </div>
+                )}
+
+                <div style={{ fontSize: "0.75rem", opacity: 0.55 }}>{p.brand}</div>
+                <h3 style={{ margin: 0, fontSize: "0.9rem", lineHeight: 1.3 }}>{p.name}</h3>
+
+                {p.priceHint && (
+                  <p style={{ margin: 0, fontSize: "0.85rem", opacity: 0.7 }}>{p.priceHint}</p>
+                )}
+
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem", marginTop: "auto", position: "relative", zIndex: 1 }}>
+                  {bolUrl && (
+                    <a
+                      href={bolUrl}
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      className="btn btn-bol product-btn"
+                      style={{ fontSize: "0.8rem", padding: "0.45rem 0.75rem" }}
+                    >
+                      Bekijk op bol.com
+                    </a>
+                  )}
+
+                  {p.affiliateUrl && (
+                    <a
+                      href={p.affiliateUrl}
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      className="btn btn-amazon product-btn"
+                      style={{ fontSize: "0.8rem", padding: "0.45rem 0.75rem" }}
+                    >
+                      Bekijk op Amazon
+                    </a>
+                  )}
+
+                  <Link
+                    href={`/producten/${p.slug}`}
+                    className="product-details-link"
+                    style={{ fontSize: "0.8rem", position: "relative", zIndex: 1 }}
+                  >
+                    Meer info
+                  </Link>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
         <p className="muted small" style={{ marginTop: "1rem" }}>
