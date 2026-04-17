@@ -1,9 +1,11 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import { getProductsByCategory } from "@/data/products";
 import { categories } from "@/data/categories";
 import AmazonSearchCta from "@/components/AmazonSearchCta";
+import { getBolUrl } from "@/lib/bol-api";
 
 export const dynamic = "force-dynamic";
 
@@ -137,51 +139,86 @@ export default function CategoryPage({ params }) {
               <h2>Beste keuzes</h2>
 
               <div className="product-grid">
-                {topThree.map((p, index) => (
-                  <article key={p.slug} className="product-card highlight">
-                    {index === 0 && (
-                      <div className="best-choice">Beste keuze</div>
-                    )}
-
-                    <div className="product-tag">{p.brand}</div>
-                    <h3>{p.name}</h3>
-                    <p className="product-desc">{p.description}</p>
-
-                    {p.features?.length > 0 && (
-                      <ul className="product-bullets">
-                        {p.features.slice(0, 3).map((f) => (
-                          <li key={f}>{f}</li>
-                        ))}
-                      </ul>
-                    )}
-
-                    {p.priceHint && (
-                      <p style={{ fontSize: "0.9rem", opacity: 0.7, margin: "0.25rem 0 0.5rem" }}>
-                        {p.priceHint}
-                      </p>
-                    )}
-
-                    <div className="product-actions">
-                      {p.affiliateUrl && (
-                        <a
-                          href={p.affiliateUrl}
-                          target="_blank"
-                          rel="noopener noreferrer sponsored"
-                          className="btn btn-amazon product-btn"
-                        >
-                          {p.priceHint ? `Bekijk prijs (${p.priceHint})` : "Bekijk prijs op Amazon"}
-                        </a>
-                      )}
-
+                {topThree.map((p, index) => {
+                  const bolUrl = getBolUrl(p);
+                  return (
+                    <article key={p.slug} className="product-card highlight" style={{ position: "relative" }}>
+                      {/* Stretched link — hele kaart klikbaar */}
                       <Link
                         href={`/producten/${p.slug}`}
-                        className="product-details-link"
-                      >
-                        Meer info
-                      </Link>
-                    </div>
-                  </article>
-                ))}
+                        aria-label={p.name}
+                        style={{ position: "absolute", inset: 0, zIndex: 0 }}
+                        tabIndex={-1}
+                      />
+
+                      {index === 0 && (
+                        <div className="best-choice">Beste keuze</div>
+                      )}
+
+                      {p.image && (
+                        <div style={{ position: "relative", width: "100%", height: "160px", background: "#fff", borderRadius: "8px", overflow: "hidden", marginBottom: "0.75rem" }}>
+                          <Image
+                            src={p.image}
+                            alt={p.name}
+                            fill
+                            style={{ objectFit: "contain", padding: "8px" }}
+                            sizes="(max-width: 640px) 100vw, 360px"
+                          />
+                        </div>
+                      )}
+
+                      <div className="product-tag">{p.brand}</div>
+                      <h3>{p.name}</h3>
+                      <p className="product-desc">{p.description}</p>
+
+                      {p.features?.length > 0 && (
+                        <ul className="product-bullets">
+                          {p.features.slice(0, 3).map((f) => (
+                            <li key={f}>{f}</li>
+                          ))}
+                        </ul>
+                      )}
+
+                      {p.priceHint && (
+                        <p style={{ fontSize: "0.9rem", opacity: 0.7, margin: "0.25rem 0 0.5rem" }}>
+                          {p.priceHint}
+                        </p>
+                      )}
+
+                      <div className="product-actions" style={{ position: "relative", zIndex: 1 }}>
+                        {bolUrl && (
+                          <a
+                            href={bolUrl}
+                            target="_blank"
+                            rel="noopener noreferrer sponsored"
+                            className="btn btn-bol product-btn"
+                          >
+                            Bekijk op bol.com
+                          </a>
+                        )}
+
+                        {p.affiliateUrl && (
+                          <a
+                            href={p.affiliateUrl}
+                            target="_blank"
+                            rel="noopener noreferrer sponsored"
+                            className="btn btn-amazon product-btn"
+                          >
+                            Bekijk op Amazon
+                          </a>
+                        )}
+
+                        <Link
+                          href={`/producten/${p.slug}`}
+                          className="product-details-link"
+                          style={{ position: "relative", zIndex: 1 }}
+                        >
+                          Meer info
+                        </Link>
+                      </div>
+                    </article>
+                  );
+                })}
               </div>
             </section>
           )}
@@ -191,39 +228,82 @@ export default function CategoryPage({ params }) {
               <h2>Meer producten</h2>
 
               <div className="product-grid">
-                {rest.map((p) => (
-                  <article key={p.slug} className="product-card">
-                    <div className="product-tag">{p.brand}</div>
-                    <h3>{p.name}</h3>
-                    <p className="product-desc">{p.description}</p>
-
-                    {p.priceHint && (
-                      <p style={{ fontSize: "0.9rem", opacity: 0.7, margin: "0.25rem 0 0.5rem" }}>
-                        {p.priceHint}
-                      </p>
-                    )}
-
-                    <div className="product-actions">
-                      {p.affiliateUrl && (
-                        <a
-                          href={p.affiliateUrl}
-                          target="_blank"
-                          rel="noopener noreferrer sponsored"
-                          className="btn btn-amazon product-btn"
-                        >
-                          Bekijk prijs
-                        </a>
-                      )}
-
+                {rest.map((p) => {
+                  const bolUrl = getBolUrl(p);
+                  return (
+                    <article key={p.slug} className="product-card" style={{ position: "relative" }}>
+                      {/* Stretched link — hele kaart klikbaar */}
                       <Link
                         href={`/producten/${p.slug}`}
-                        className="product-details-link"
-                      >
-                        Meer info
-                      </Link>
-                    </div>
-                  </article>
-                ))}
+                        aria-label={p.name}
+                        style={{ position: "absolute", inset: 0, zIndex: 0 }}
+                        tabIndex={-1}
+                      />
+
+                      {p.image && (
+                        <div style={{ position: "relative", width: "100%", height: "160px", background: "#fff", borderRadius: "8px", overflow: "hidden", marginBottom: "0.75rem" }}>
+                          <Image
+                            src={p.image}
+                            alt={p.name}
+                            fill
+                            style={{ objectFit: "contain", padding: "8px" }}
+                            sizes="(max-width: 640px) 100vw, 360px"
+                          />
+                        </div>
+                      )}
+
+                      <div className="product-tag">{p.brand}</div>
+                      <h3>{p.name}</h3>
+                      <p className="product-desc">{p.description}</p>
+
+                      {p.features?.length > 0 && (
+                        <ul className="product-bullets">
+                          {p.features.slice(0, 3).map((f) => (
+                            <li key={f}>{f}</li>
+                          ))}
+                        </ul>
+                      )}
+
+                      {p.priceHint && (
+                        <p style={{ fontSize: "0.9rem", opacity: 0.7, margin: "0.25rem 0 0.5rem" }}>
+                          {p.priceHint}
+                        </p>
+                      )}
+
+                      <div className="product-actions" style={{ position: "relative", zIndex: 1 }}>
+                        {bolUrl && (
+                          <a
+                            href={bolUrl}
+                            target="_blank"
+                            rel="noopener noreferrer sponsored"
+                            className="btn btn-bol product-btn"
+                          >
+                            Bekijk op bol.com
+                          </a>
+                        )}
+
+                        {p.affiliateUrl && (
+                          <a
+                            href={p.affiliateUrl}
+                            target="_blank"
+                            rel="noopener noreferrer sponsored"
+                            className="btn btn-amazon product-btn"
+                          >
+                            Bekijk op Amazon
+                          </a>
+                        )}
+
+                        <Link
+                          href={`/producten/${p.slug}`}
+                          className="product-details-link"
+                          style={{ position: "relative", zIndex: 1 }}
+                        >
+                          Meer info
+                        </Link>
+                      </div>
+                    </article>
+                  );
+                })}
               </div>
             </>
           )}

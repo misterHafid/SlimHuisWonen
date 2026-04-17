@@ -210,6 +210,17 @@ code {
   transform: translateY(-1px);
 }
 
+.btn-bol {
+  background: #0000a4;
+  color: #fff;
+  font-weight: 700;
+}
+
+.btn-bol:hover {
+  background: #0000c8;
+  transform: translateY(-1px);
+}
+
 /* =========================================================
    Hero (oude hero section – mag blijven)
    ========================================================= */
