@@ -27,9 +27,10 @@ export default function DisclaimerPage() {
 
           <h2>Affiliate links</h2>
           <p>
-            SlimHuisWonen.nl bevat affiliate-links naar Amazon.nl. Als je via zo
-            een link een aankoop doet, ontvangen wij een kleine commissie van
-            Amazon. <strong>Voor jou verandert de prijs niet.</strong>
+            SlimHuisWonen.nl bevat affiliate-links naar webshops zoals Amazon,
+            bol.com en Coolblue. Als je via zo'n link een aankoop doet,
+            ontvangen wij een kleine commissie.{" "}
+            <strong>Voor jou verandert de prijs niet.</strong>
           </p>
           <p>
             Wij selecteren producten op basis van kwaliteit en gebruiksgemak —
@@ -37,10 +38,9 @@ export default function DisclaimerPage() {
             altijd eerlijk en gebaseerd op eigen ervaring of grondig onderzoek.
           </p>
           <p>
-            SlimHuisWonen.nl is deelnemer aan het Amazon EU Associates-programma,
-            een affiliate-advertentieprogramma dat websites de mogelijkheid biedt
-            advertentiekosten te verdienen door te adverteren en te linken naar
-            Amazon.nl.
+            SlimHuisWonen.nl neemt deel aan affiliate-programma's van onder
+            andere Amazon, bol.com en Coolblue. Dit zijn advertentieprogramma's
+            waarbij websites commissie verdienen via productlinks.
           </p>
 
           <h2>Juistheid van informatie</h2>

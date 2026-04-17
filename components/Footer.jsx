@@ -11,9 +11,9 @@ export default function Footer() {
         </p>
 
         <p className="muted small">
-          SlimHuisWonen.nl is deelnemer aan het Amazon Partnerprogramma.
-          Als Amazon Associate verdienen wij aan in aanmerking komende aankopen.
-          Voor jou verandert de prijs niet.
+          SlimHuisWonen.nl bevat affiliate-links naar webshops zoals Amazon,
+          bol.com en Coolblue. Bij aankoop via deze links ontvangen wij een
+          kleine commissie — jij betaalt niets extra.
         </p>
 
         <nav className="footer-nav" aria-label="Juridisch">

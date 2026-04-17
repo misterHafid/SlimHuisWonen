@@ -284,10 +284,10 @@ export default function OverPage() {
           >
             <strong>Over affiliate links:</strong>
             <p style={{ margin: "0.4rem 0 0" }}>
-              Op deze site staan links naar Amazon. Als je via zo'n link iets
-              koopt, krijg ik een kleine commissie — jij betaalt niets extra.
-              Ik raad alleen producten aan die ik zelf zou kopen of al heb
-              gekocht.{" "}
+              Op deze site staan links naar webshops zoals Amazon, bol.com en
+              Coolblue. Als je via zo'n link iets koopt, krijg ik een kleine
+              commissie — jij betaalt niets extra. Ik raad alleen producten aan
+              die ik zelf zou kopen of al heb gekocht.{" "}
               <Link href="/disclaimer">Meer info in mijn disclaimer</Link>.
             </p>
           </div>

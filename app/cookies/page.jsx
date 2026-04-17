@@ -57,19 +57,12 @@ export default function CookiesPage() {
             Google verwerkt deze gegevens conform hun eigen privacybeleid.
           </p>
 
-          <h3>Amazon cookies (derden)</h3>
+          <h3>Webshop cookies (derden)</h3>
           <p>
-            Als je klikt op een Amazon affiliate-link, plaatst Amazon mogelijk
-            cookies op je apparaat. Dit valt buiten onze controle en is
-            onderworpen aan het{" "}
-            <a
-              href="https://www.amazon.nl/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              cookiebeleid van Amazon
-            </a>
-            .
+            Als je klikt op een affiliate-link naar een webshop (zoals Amazon,
+            bol.com of Coolblue), kunnen die webshops cookies plaatsen op je
+            apparaat. Dit valt buiten onze controle en is onderworpen aan het
+            cookiebeleid van de betreffende webshop.
           </p>
 
           <h2>Cookies weigeren of verwijderen</h2>

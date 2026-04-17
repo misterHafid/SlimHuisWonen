@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata = {
   title: "Privacybeleid | SlimHuisWonen.nl",
   description:
-    "Lees het privacybeleid van SlimHuisWonen.nl. Welke gegevens we verwerken, hoe we omgaan met Amazon affiliate-links en hoe je je rechten kunt uitoefenen.",
+    "Lees het privacybeleid van SlimHuisWonen.nl. Welke gegevens we verwerken, hoe we omgaan met affiliate-links naar webshops en hoe je je rechten kunt uitoefenen.",
   alternates: { canonical: "https://slimhuiswonen.nl/privacy" },
   robots: "index, follow",
 };
@@ -58,17 +58,10 @@ export default function PrivacyPage() {
               .
             </li>
             <li>
-              <strong>Amazon affiliate-links</strong> — als je via een link op
-              deze site naar Amazon.nl gaat, verwerkt Amazon je gegevens conform
-              hun eigen privacybeleid. Zie{" "}
-              <a
-                href="https://www.amazon.nl/gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Amazon Privacyverklaring
-              </a>
-              .
+              <strong>Affiliate-links naar webshops</strong> — als je via een
+              link op deze site naar een webshop (zoals Amazon, bol.com of
+              Coolblue) gaat, verwerkt die webshop je gegevens conform hun eigen
+              privacybeleid.
             </li>
           </ul>
 
@@ -78,11 +71,11 @@ export default function PrivacyPage() {
             <Link href="/cookies">cookiebeleid</Link> voor een volledig overzicht.
           </p>
 
-          <h2>4. Amazon Partnerprogramma</h2>
+          <h2>4. Affiliate partnerprogramma's</h2>
           <p>
-            SlimHuisWonen.nl is deelnemer aan het Amazon EU Associates-programma
-            (affiliate marketing). Dit betekent dat wij een kleine commissie
-            ontvangen als je via onze links een product koopt op Amazon.nl. Voor
+            SlimHuisWonen.nl neemt deel aan affiliate-programma's van webshops
+            zoals Amazon, bol.com en Coolblue. Dit betekent dat wij een kleine
+            commissie ontvangen als je via onze links een product koopt. Voor
             jou verandert er niets aan de prijs.
           </p>
           <p>
@@ -100,7 +93,7 @@ export default function PrivacyPage() {
           </p>
           <p>
             Voor vragen over jouw rechten of de verwerking via externe diensten
-            (Google, Amazon) kun je contact opnemen via onze{" "}
+            (Google, Amazon, bol.com) kun je contact opnemen via onze{" "}
             <Link href="/contact">contactpagina</Link>.
           </p>
 

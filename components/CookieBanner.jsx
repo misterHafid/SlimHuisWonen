@@ -43,7 +43,7 @@ export default function CookieBanner() {
     >
       <p style={{ margin: "0 0 0.75rem", fontSize: "0.95rem", lineHeight: 1.5, color: "#f1f5f9" }}>
         Wij gebruiken Google Analytics voor anonieme bezoekersstatistieken en
-        Amazon affiliate-links voor productaanbevelingen.{" "}
+        affiliate-links naar webshops voor productaanbevelingen.{" "}
         <Link href="/cookies" style={{ color: "#818cf8" }}>
           Meer info
         </Link>
