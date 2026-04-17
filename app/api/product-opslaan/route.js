@@ -90,19 +90,28 @@ export async function POST(request) {
     }
   }
 
+  // --- Sanitize: verwijder newlines/tabs en escape aanhalingstekens ---
+  function sanitize(str) {
+    return String(str || "")
+      .replace(/[\r\n\t]+/g, " ")   // newlines/tabs → spatie
+      .replace(/\s{2,}/g, " ")      // meerdere spaties → één spatie
+      .trim()
+      .replace(/"/g, "'");          // dubbele aanhalingstekens → enkele
+  }
+
   // --- Product object bouwen ---
   const priceHint = price ? price.replace("€ ", "€").replace(",", ",") : null;
 
   const productEntry = `
   {
     slug: "${slug}",
-    ${ean ? `ean: "${ean}",` : ""}
-    brand: "${(brand || "").replace(/"/g, "'")}",
-    name: "${name.replace(/"/g, "'")}",
+    ${ean ? `ean: "${sanitize(ean)}",` : ""}
+    brand: "${sanitize(brand)}",
+    name: "${sanitize(name)}",
     category: "${category}",
     image: "${localImage || "/images/products/placeholder.png"}",
-    description: "${(description || name).replace(/"/g, "'")}",
-    features: [${features.map((f) => `"${String(f).replace(/"/g, "'")}"`).join(", ")}],
+    description: "${sanitize(description || name)}",
+    features: [${features.map((f) => `"${sanitize(f)}"`).join(", ")}],
     ${finalAmazonUrl ? `affiliateUrl: "${finalAmazonUrl}",` : ""}
     ${coolblueUrl ? `coolblueUrl: "${coolblueUrl}",` : ""}
     ${finalYoutubeId ? `youtubeId: "${finalYoutubeId}",` : ""}
@@ -116,21 +125,31 @@ export async function POST(request) {
 
   // --- Invoegen in products.js vóór de afsluitende ]; ---
   const productsPath = path.join(ROOT, "data", "products.js");
-  let content = fs.readFileSync(productsPath, "utf8");
+
+  // Lees als binary zodat we line endings zelf beheren
+  const rawBuffer = fs.readFileSync(productsPath);
+  const eol = rawBuffer.includes(Buffer.from("\r\n")) ? "\r\n" : "\n";
+  let content = rawBuffer.toString("utf8");
 
   if (content.includes(`slug: "${slug}"`)) {
     return Response.json({ error: `Product met slug "${slug}" bestaat al` }, { status: 409 });
   }
 
-  // Zoek de afsluitende ]; van de products array — staat vóór de HELPERS comment
-  const insertMarker = "\n];\n\n/* =========================\n   HELPERS";
-  if (content.includes(insertMarker)) {
-    content = content.replace(insertMarker, `\n${productEntry}${insertMarker}`);
+  // Normaliseer het productEntry naar de juiste line endings
+  const entry = productEntry.replace(/\r\n/g, "\n").replace(/\n/g, eol);
+
+  // Zoek de afsluitende ]; van de products array (werkt met zowel LF als CRLF)
+  const marker = `${eol}];${eol}${eol}/* =========================`;
+  if (content.includes(marker)) {
+    content = content.replace(marker, `${eol}${entry}${marker}`);
   } else {
     // Fallback: voeg in vóór de laatste ]; in het bestand
+    // Zoek op \n]; zodat het werkt ongeacht of er een \r voor staat
     const lastBracket = content.lastIndexOf("\n];");
     if (lastBracket === -1) throw new Error("Kan products array niet vinden in products.js");
-    content = content.slice(0, lastBracket) + `\n${productEntry}` + content.slice(lastBracket);
+    // Verwijder de eventuele losse \r voor de \n om mixed endings te voorkomen
+    const insertPos = content[lastBracket - 1] === "\r" ? lastBracket - 1 : lastBracket;
+    content = content.slice(0, insertPos) + `${eol}${entry}` + content.slice(lastBracket);
   }
 
   fs.writeFileSync(productsPath, content, "utf8");

@@ -1593,6 +1593,87 @@ export const products = [
     cons: [],
     forWho: [],
   },
+
+  {
+    slug: "philips-hue-lily-starter-pack-white-and-color-prik",
+    
+    brand: "Philips Hue",
+    name: "Philips Hue Lily Starter Pack White and Color prikspot 3-Pack",
+    category: "slimme-verlichting",
+    image: "/images/products/philips-hue-lily-starter-pack-white-and-color-prik.png",
+    description: "Met dit Philips Hue Lily Starter Pack heb jij Philips Hue in de tuin of op je terras. Deze basisset bestaat uit 3 armaturen voor buiten en alle onderdelen die je nodig hebt voor het aansluiten. Steek de stekker in het stopcontact en kies uit 1 van de 16 miljoen kleuren of alle tinten wit. De armaturen zijn van aluminium en zijn waterdicht. Je koppelt de slimme buitenlamp aan de Hue bridge (niet meegeleverd). Met de app op je smartphone zet je de lamp op afstand aan en uit, bepaal je de lichtkleur of laat je de lamp automatisch reageren op de zonsondergang. Dankzij geofencing kan de lamp automatisch in- of uitschakelen wanneer je thuiskomt of je woning verlaat. Bovendien is de buitenlamp compatibel met Amazon Alexa, Apple HomeKit of Google Assistant. Let op! Deze Philips Hue buitenverlichting werkt alleen in combinatie met een bridge.",
+    features: [],
+    affiliateUrl: "https://www.amazon.nl/Philips-Hue-Tuinspot-3-Lichts-Basis/dp/B07BXT7VHT?tag=slimhuiswonen-21",
+    coolblueUrl: "https://www.coolblue.nl/product/813432",
+    youtubeId: "4JZbVX8kc74",
+    priceHint: "€286,00",
+    priceLastUpdated: "april 2026",
+    
+    pros: [],
+    cons: [],
+    forWho: [],
+  },
+
+  {
+    slug: "philips-hue-play-hdmi-sync-box-8k",
+    
+    brand: "Philips Hue",
+    name: "Philips Hue Play HDMI Sync Box 8K",
+    category: "slimme-verlichting",
+    image: "/images/products/philips-hue-play-hdmi-sync-box-8k.png",
+    description: "Met de Philips Hue Play HDMI Sync Box 8K laat je jouw Philips Hue smart lampen meekleuren met je televisie. De Sync Box verwerkt 4K beelden op 120Hz en 8K beelden op 60Hz. Je maakt dus de afweging tussen een hogere 8K beeldkwaliteit of extra vloeiend beeld met 120Hz. Als je tv maximaal 4K beeld ondersteunt, kies je altijd voor 4K beeldkwaliteit met 120Hz. De Sync Box heeft 5 HDMI poorten. Eén daarvan is de uitgang naar je tv. De andere 4 gebruik je als ingangen. Zo sluit je bijvoorbeeld een Playstation, laptop en Google Chromecast tegelijk aan. De Sync Box verwerkt het beeld van deze apparaten. In de Philips Hue app stel je in welke lampen meekleuren met je beeldscherm.",
+    features: [],
+    affiliateUrl: "https://www.amazon.nl/Philips-Hue-Play-HDMI-sync/dp/B0DGQSY3ZT?tag=slimhuiswonen-21",
+    coolblueUrl: "https://www.coolblue.nl/product/954033",
+    youtubeId: "5jveH90EX14",
+    priceHint: "€350,00",
+    priceLastUpdated: "april 2026",
+    
+    pros: [],
+    cons: [],
+    forWho: [],
+  },
+
+  {
+    slug: "innr-smart-gu10-led-lamp-geschikt-voor-philips-hue",
+    
+    brand: "Innr",
+    name: "Innr smart GU10 LED lamp - geschikt voor Philips Hue - Zigbee LED spot - warm white - slimme lamp - dimbaar - 460 lumen - 4 pack",
+    category: "slimme-verlichting",
+    image: "/images/products/innr-smart-gu10-led-lamp-geschikt-voor-philips-hue.jpg",
+    description: "Innr smart GU10 LED lamp - geschikt voor Philips Hue - Zigbee LED spot - warm white - slimme lamp - dimbaar - 460 lumen - 4 pack",
+    features: [],
+    
+    
+    youtubeId: "tdE61zU1cbk",
+    priceHint: "€10,00",
+    priceLastUpdated: "april 2026",
+    rating: 4.3,
+    pros: [],
+    cons: [],
+    forWho: [],
+  },
+
+  {
+    slug: "philips-hue-go-tafellamp-white-and-color-zwart",
+    
+    brand: "Philips Hue",
+    name: "Philips Hue Go tafellamp - White and Color - zwart",
+    category: "slimme-verlichting",
+    image: "/images/products/philips-hue-go-tafellamp-white-and-color-zwart.png",
+    description: "Met de slimme Philips Hue Go draagbare tafellamp op batterij breng je slimme verlichting naar iedere hoek van je huis. Deze kleine staande lamp verplaats je namelijk gemakkelijk dankzij het siliconen handvat. Deze lamp verplaats je gemakkelijk naar waar je het meeste licht nodig hebt, omdat de batterij 48 uur meegaat. Eet je eens buiten maar is het wat donker? De Philips Hue Go is ook geschikt voor buitenshuis gebruik. Deze lamp geeft 16 miljoen verschillende kleuren licht. Je verbindt de lamp via bluetooth of aan het internet met een bridge. Met een bridge bedien je de lampen ook buitenshuis en stel je vaste routines in.",
+    features: [],
+    
+    affiliateUrl: "https://www.amazon.nl/Philips-Hue-Tafellamp-Verlichting-Bluetooth/dp/B0B2PV9YX5?tag=slimhuiswonen-21",
+    coolblueUrl: "https://www.coolblue.nl/product/922837",
+    youtubeId: "yhQIaa8hvEg",
+    priceHint: "€131,00",
+    priceLastUpdated: "april 2026",
+    
+    pros: [],
+    cons: [],
+    forWho: [],
+  },
 ];
 
 /* =========================
