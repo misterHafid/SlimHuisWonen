@@ -94,7 +94,7 @@ export default function BuyGuideProductCard({
               className="btn btn-amazon product-btn"
               style={{ fontSize: "0.88rem", padding: "0.55rem 1rem", whiteSpace: "nowrap" }}
             >
-              {priceHint ? `Amazon (${priceHint})` : "Bekijk op Amazon"}
+              Bekijk op Amazon
             </a>
           )}
 
