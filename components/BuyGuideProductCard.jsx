@@ -9,6 +9,7 @@ export default function BuyGuideProductCard({
   badges = [],
   amazonUrl,
   bolUrl,
+  coolblueUrl,
   priceHint,
 }) {
   return (
@@ -95,6 +96,18 @@ export default function BuyGuideProductCard({
               style={{ fontSize: "0.88rem", padding: "0.55rem 1rem", whiteSpace: "nowrap" }}
             >
               Bekijk op Amazon
+            </a>
+          )}
+
+          {coolblueUrl && (
+            <a
+              href={coolblueUrl}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="btn btn-coolblue product-btn"
+              style={{ fontSize: "0.88rem", padding: "0.55rem 1rem", whiteSpace: "nowrap" }}
+            >
+              Bekijk op Coolblue
             </a>
           )}
 

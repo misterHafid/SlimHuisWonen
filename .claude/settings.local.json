@@ -5,7 +5,13 @@
       "Bash(node -e \"const {products} = require\\('./data/products.js'\\); console.log\\('Total products:', products.length\\)\")",
       "Bash(node -e ':*)",
       "Bash(node -e ' *)",
-      "Bash(rm \"c:\\\\Users\\\\hafid\\\\Documents\\\\project website\\\\slimhuiswonen-seo\\\\public\\\\images\\\\products\\\\eufy-c30-2k-draadloze-video-deurbel-2k-fhd-accu-zw.jpg\")"
+      "Bash(rm \"c:\\\\Users\\\\hafid\\\\Documents\\\\project website\\\\slimhuiswonen-seo\\\\public\\\\images\\\\products\\\\eufy-c30-2k-draadloze-video-deurbel-2k-fhd-accu-zw.jpg\")",
+      "Bash(python3 -c ' *)",
+      "Read(//c/Users/hafid/Downloads/**)",
+      "Read(//c/Users/hafid/Desktop/**)",
+      "Bash(node)",
+      "Bash(node -e \"const fs=require\\('fs'\\); console.log\\(fs.readdirSync\\('data'\\).join\\('\\\\n'\\)\\);\")",
+      "Bash(node -e \"const fs=require\\('fs'\\); console.log\\(fs.readdirSync\\('C:/Users/hafid/Downloads'\\).filter\\(f=>f.includes\\('datafeed'\\)\\).join\\('\\\\n'\\)\\);\")"
     ]
   }
 }

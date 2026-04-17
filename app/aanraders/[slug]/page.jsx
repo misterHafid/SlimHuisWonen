@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { aanraders } from "@/data/aanraders";
 import { blogPosts } from "@/data/blog";
 import { getProductBySlug } from "@/data/products";
-import { getBolUrl } from "@/lib/bol-api";
+import { getBolUrl, getCoolblueUrl } from "@/lib/bol-api";
 import BuyGuideProductCard from "@/components/BuyGuideProductCard";
 import AmazonSearchCta from "@/components/AmazonSearchCta";
 import RelatedContent from "@/components/RelatedContent";
@@ -97,6 +97,7 @@ export default function AanraderDetailPage({ params }) {
       ...pick,
       amazonUrl: product?.affiliateUrl || null,
       bolUrl: product ? getBolUrl(product) : null,
+      coolblueUrl: product ? getCoolblueUrl(product) : null,
       priceHint: product?.priceHint || null,
     };
   });

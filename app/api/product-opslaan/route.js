@@ -22,7 +22,7 @@ export async function POST(request) {
   }
 
   const body = await request.json();
-  const { slug, name, brand, category, description, price, rating, ean, amazonUrl, youtubeUrl, imageUrl, features = [] } = body;
+  const { slug, name, brand, category, description, price, rating, ean, amazonUrl, coolblueUrl, youtubeUrl, imageUrl, features = [] } = body;
 
   if (!slug || !name || !category) {
     return Response.json({ error: "slug, name en category zijn verplicht" }, { status: 400 });
@@ -59,15 +59,20 @@ export async function POST(request) {
   }
 
   // --- YouTube video ID extraheren ---
-  let finalYoutubeUrl = null;
+  // Accepteer zowel een losse video-ID als een volledige YouTube URL
+  let finalYoutubeId = null;
   if (youtubeUrl) {
-    const shorts = youtubeUrl.match(/youtube\.com\/shorts\/([^?&/]+)/);
-    const watch  = youtubeUrl.match(/[?&]v=([^&]+)/);
-    const short  = youtubeUrl.match(/youtu\.be\/([^?&/]+)/);
-    const embed  = youtubeUrl.match(/youtube\.com\/embed\/([^?&/]+)/);
-    const videoId = (shorts || watch || short || embed)?.[1];
-    if (videoId) {
-      finalYoutubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
+    const isRawId = /^[a-zA-Z0-9_-]{11}$/.test(youtubeUrl.trim());
+    if (isRawId) {
+      finalYoutubeId = youtubeUrl.trim();
+    } else {
+      finalYoutubeId = (
+        youtubeUrl.match(/youtube\.com\/shorts\/([^?&/]+)/)?.[1] ||
+        youtubeUrl.match(/[?&]v=([^&]+)/)?.[1] ||
+        youtubeUrl.match(/youtu\.be\/([^?&/]+)/)?.[1] ||
+        youtubeUrl.match(/youtube\.com\/embed\/([^?&/]+)/)?.[1] ||
+        null
+      );
     }
   }
 
@@ -99,7 +104,8 @@ export async function POST(request) {
     description: "${(description || name).replace(/"/g, "'")}",
     features: [${features.map((f) => `"${String(f).replace(/"/g, "'")}"`).join(", ")}],
     ${finalAmazonUrl ? `affiliateUrl: "${finalAmazonUrl}",` : ""}
-    ${finalYoutubeUrl ? `youtubeUrl: "${finalYoutubeUrl}",` : ""}
+    ${coolblueUrl ? `coolblueUrl: "${coolblueUrl}",` : ""}
+    ${finalYoutubeId ? `youtubeId: "${finalYoutubeId}",` : ""}
     ${priceHint ? `priceHint: "${priceHint}",` : ""}
     priceLastUpdated: "${new Date().toLocaleDateString("nl-NL", { month: "long", year: "numeric" })}",
     ${rating ? `rating: ${rating},` : ""}

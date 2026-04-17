@@ -5,7 +5,7 @@ import Image from "next/image";
 import { getProductsByCategory } from "@/data/products";
 import { categories } from "@/data/categories";
 import AmazonSearchCta from "@/components/AmazonSearchCta";
-import { getBolUrl } from "@/lib/bol-api";
+import { getBolUrl, getCoolblueUrl } from "@/lib/bol-api";
 
 export const dynamic = "force-dynamic";
 
@@ -141,6 +141,7 @@ export default function CategoryPage({ params }) {
               <div className="product-grid">
                 {topThree.map((p, index) => {
                   const bolUrl = getBolUrl(p);
+                  const coolblueUrl = getCoolblueUrl(p);
                   return (
                     <article key={p.slug} className="product-card highlight" style={{ position: "relative" }}>
                       {/* Stretched link — hele kaart klikbaar */}
@@ -208,6 +209,17 @@ export default function CategoryPage({ params }) {
                           </a>
                         )}
 
+                        {coolblueUrl && (
+                          <a
+                            href={coolblueUrl}
+                            target="_blank"
+                            rel="noopener noreferrer sponsored"
+                            className="btn btn-coolblue product-btn"
+                          >
+                            Bekijk op Coolblue
+                          </a>
+                        )}
+
                         <Link
                           href={`/producten/${p.slug}`}
                           className="product-details-link"
@@ -230,6 +242,7 @@ export default function CategoryPage({ params }) {
               <div className="product-grid">
                 {rest.map((p) => {
                   const bolUrl = getBolUrl(p);
+                  const coolblueUrl = getCoolblueUrl(p);
                   return (
                     <article key={p.slug} className="product-card" style={{ position: "relative" }}>
                       {/* Stretched link — hele kaart klikbaar */}
@@ -290,6 +303,17 @@ export default function CategoryPage({ params }) {
                             className="btn btn-amazon product-btn"
                           >
                             Bekijk op Amazon
+                          </a>
+                        )}
+
+                        {coolblueUrl && (
+                          <a
+                            href={coolblueUrl}
+                            target="_blank"
+                            rel="noopener noreferrer sponsored"
+                            className="btn btn-coolblue product-btn"
+                          >
+                            Bekijk op Coolblue
                           </a>
                         )}
 

@@ -221,6 +221,17 @@ code {
   transform: translateY(-1px);
 }
 
+.btn-coolblue {
+  background: #003087;
+  color: #fff;
+  font-weight: 700;
+}
+
+.btn-coolblue:hover {
+  background: #004ab3;
+  transform: translateY(-1px);
+}
+
 /* =========================================================
    Hero (oude hero section – mag blijven)
    ========================================================= */

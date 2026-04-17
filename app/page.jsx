@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import { getProductBySlug } from "@/data/products";
-import { getBolUrl } from "@/lib/bol-api";
+import { getBolUrl, getCoolblueUrl } from "@/lib/bol-api";
 
 const POPULAIRE_SLUGS = [
   "philips-hue-white-ambiance-starterkit",
@@ -38,6 +38,7 @@ function PopulaireProducten() {
         >
           {producten.map((p) => {
             const bolUrl = getBolUrl(p);
+            const coolblueUrl = getCoolblueUrl(p);
             return (
               <article
                 key={p.slug}
@@ -109,6 +110,18 @@ function PopulaireProducten() {
                       style={{ fontSize: "0.8rem", padding: "0.45rem 0.75rem" }}
                     >
                       Bekijk op Amazon
+                    </a>
+                  )}
+
+                  {coolblueUrl && (
+                    <a
+                      href={coolblueUrl}
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      className="btn btn-coolblue product-btn"
+                      style={{ fontSize: "0.8rem", padding: "0.45rem 0.75rem" }}
+                    >
+                      Bekijk op Coolblue
                     </a>
                   )}
 

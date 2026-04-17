@@ -4,20 +4,23 @@ import { useState } from "react";
 
 /**
  * Lazy YouTube embed — toont thumbnail tot de gebruiker klikt.
- * Voorkomt dat YouTube-scripts en -iframes al laden bij het openen van de pagina.
- *
- * @param {string} embedUrl  - https://www.youtube.com/embed/VIDEO_ID
- * @param {string} title     - alt-tekst / iframe title
+ * Accepteert videoId (aanbevolen) of embedUrl (legacy).
+ * Gebruikt youtube-nocookie.com voor privacy.
  */
-export default function YouTubeFacade({ embedUrl, title }) {
+export default function YouTubeFacade({ videoId: videoIdProp, embedUrl, title }) {
   const [active, setActive] = useState(false);
 
-  // Haal video-ID op uit embed-URL
-  const videoId = embedUrl?.match(/embed\/([^?]+)/)?.[1];
+  // Resolve video ID: direct prop heeft prioriteit, anders uit embedUrl
+  const videoId =
+    videoIdProp ||
+    embedUrl?.match(/embed\/([^?/]+)/)?.[1] ||
+    null;
+
   if (!videoId) return null;
 
   const thumbnail = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-  const autoplayUrl = `${embedUrl}${embedUrl.includes("?") ? "&" : "?"}autoplay=1&rel=0`;
+  const embedBase = `https://www.youtube-nocookie.com/embed/${videoId}`;
+  const autoplayUrl = `${embedBase}?autoplay=1&rel=0`;
 
   if (active) {
     return (
@@ -61,7 +64,6 @@ export default function YouTubeFacade({ embedUrl, title }) {
         background: "#000",
       }}
     >
-      {/* Thumbnail */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={thumbnail}
@@ -70,7 +72,6 @@ export default function YouTubeFacade({ embedUrl, title }) {
         style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
       />
 
-      {/* Play-knop overlay */}
       <span
         style={{
           position: "absolute",

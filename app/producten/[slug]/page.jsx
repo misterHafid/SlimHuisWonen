@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getProductBySlug, getAllProducts } from "@/data/products";
-import { getBolUrl } from "@/lib/bol-api";
+import { getBolUrl, getCoolblueUrl } from "@/lib/bol-api";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import YouTubeFacade from "@/components/YouTubeFacade";
@@ -45,33 +45,15 @@ export async function generateStaticParams() {
 }
 
 /* ---------- Video helpers ---------- */
-function toYouTubeEmbedUrl(url) {
+function extractVideoId(url) {
   if (!url || typeof url !== "string") return null;
-
-  // Shorts
-  const shortsMatch = url.match(/youtube\.com\/shorts\/([^?]+)/);
-  if (shortsMatch?.[1]) {
-    return `https://www.youtube.com/embed/${shortsMatch[1]}`;
-  }
-
-  // Watch
-  const watchMatch = url.match(/[?&]v=([^&]+)/);
-  if (watchMatch?.[1]) {
-    return `https://www.youtube.com/embed/${watchMatch[1]}`;
-  }
-
-  // youtu.be
-  const shortUrlMatch = url.match(/youtu\.be\/([^?]+)/);
-  if (shortUrlMatch?.[1]) {
-    return `https://www.youtube.com/embed/${shortUrlMatch[1]}`;
-  }
-
-  // already embed
-  if (url.includes("youtube.com/embed/")) {
-    return url;
-  }
-
-  return null;
+  return (
+    url.match(/youtube\.com\/shorts\/([^?/]+)/)?.[1] ||
+    url.match(/[?&]v=([^&]+)/)?.[1] ||
+    url.match(/youtu\.be\/([^?/]+)/)?.[1] ||
+    url.match(/youtube\.com\/embed\/([^?/]+)/)?.[1] ||
+    null
+  );
 }
 
 /* ---------- Helpers ---------- */
@@ -82,9 +64,11 @@ const getAmazonUrl = (p) =>
   p?.url ||
   null;
 
-const getVideoUrl = (p) =>
-  p?.youtubeUrl ||
-  p?.videoUrl ||
+// Resolve video ID: youtubeId field (new) or extract from youtubeUrl (legacy)
+const getVideoId = (p) =>
+  p?.youtubeId ||
+  extractVideoId(p?.youtubeUrl) ||
+  extractVideoId(p?.videoUrl) ||
   null;
 
 export default function ProductPage({ params }) {
@@ -108,10 +92,10 @@ export default function ProductPage({ params }) {
     compatibility = {},
   } = product;
 
-  const amazonUrl = getAmazonUrl(product);
-  const bolUrl    = getBolUrl(product);
-  const rawVideoUrl = getVideoUrl(product);
-  const youtubeEmbedUrl = toYouTubeEmbedUrl(rawVideoUrl);
+  const amazonUrl   = getAmazonUrl(product);
+  const bolUrl      = getBolUrl(product);
+  const coolblueUrl = getCoolblueUrl(product);
+  const videoId     = getVideoId(product);
 
   const productSchema = {
     "@context": "https://schema.org",
@@ -159,27 +143,10 @@ export default function ProductPage({ params }) {
             <p className="product-desc">{description}</p>
 
             {/* ✅ Video */}
-            {rawVideoUrl && (
+            {videoId && (
               <section style={{ marginTop: "2rem" }}>
                 <h2>Video: zo werkt dit product</h2>
-
-                {youtubeEmbedUrl ? (
-                  <YouTubeFacade
-                    embedUrl={youtubeEmbedUrl}
-                    title={`Video van ${name}`}
-                  />
-                ) : (
-                  <div style={{ marginTop: "1rem" }}>
-                    <a
-                      href={rawVideoUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn btn-secondary"
-                    >
-                      Bekijk video →
-                    </a>
-                  </div>
-                )}
+                <YouTubeFacade videoId={videoId} title={`Video van ${name}`} />
               </section>
             )}
 
@@ -271,8 +238,8 @@ export default function ProductPage({ params }) {
               </p>
             )}
 
-            {/* ✅ Knoppen: Amazon + bol.com */}
-            {(amazonUrl || bolUrl) && (
+            {/* ✅ Knoppen: Amazon + bol.com + Coolblue */}
+            {(amazonUrl || bolUrl || coolblueUrl) && (
               <div style={{ marginTop: "1.5rem" }}>
                 <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
                   {amazonUrl && (
@@ -315,6 +282,27 @@ export default function ProductPage({ params }) {
                       }}
                     >
                       Bekijk op bol.com →
+                    </a>
+                  )}
+                  {coolblueUrl && (
+                    <a
+                      href={coolblueUrl}
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "0.4rem",
+                        padding: "0.6rem 1.1rem",
+                        borderRadius: "8px",
+                        background: "#003087",
+                        color: "#fff",
+                        fontWeight: 700,
+                        fontSize: "0.9rem",
+                        textDecoration: "none",
+                      }}
+                    >
+                      Bekijk op Coolblue →
                     </a>
                   )}
                 </div>
