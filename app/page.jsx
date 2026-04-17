@@ -101,18 +101,6 @@ function PopulaireProducten() {
                     </a>
                   )}
 
-                  {p.affiliateUrl && (
-                    <a
-                      href={p.affiliateUrl}
-                      target="_blank"
-                      rel="noopener noreferrer sponsored"
-                      className="btn btn-amazon product-btn"
-                      style={{ fontSize: "0.8rem", padding: "0.45rem 0.75rem" }}
-                    >
-                      Bekijk op Amazon
-                    </a>
-                  )}
-
                   {coolblueUrl && (
                     <a
                       href={coolblueUrl}
@@ -122,6 +110,18 @@ function PopulaireProducten() {
                       style={{ fontSize: "0.8rem", padding: "0.45rem 0.75rem" }}
                     >
                       Bekijk op Coolblue
+                    </a>
+                  )}
+
+                  {p.affiliateUrl && (
+                    <a
+                      href={p.affiliateUrl}
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      className="btn btn-amazon product-btn"
+                      style={{ fontSize: "0.8rem", padding: "0.45rem 0.75rem" }}
+                    >
+                      Bekijk op Amazon
                     </a>
                   )}
 

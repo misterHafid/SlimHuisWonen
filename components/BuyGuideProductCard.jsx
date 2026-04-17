@@ -87,18 +87,6 @@ export default function BuyGuideProductCard({
             </a>
           )}
 
-          {amazonUrl && (
-            <a
-              href={amazonUrl}
-              target="_blank"
-              rel="noopener noreferrer sponsored"
-              className="btn btn-amazon product-btn"
-              style={{ fontSize: "0.88rem", padding: "0.55rem 1rem", whiteSpace: "nowrap" }}
-            >
-              Bekijk op Amazon
-            </a>
-          )}
-
           {coolblueUrl && (
             <a
               href={coolblueUrl}
@@ -108,6 +96,18 @@ export default function BuyGuideProductCard({
               style={{ fontSize: "0.88rem", padding: "0.55rem 1rem", whiteSpace: "nowrap" }}
             >
               Bekijk op Coolblue
+            </a>
+          )}
+
+          {amazonUrl && (
+            <a
+              href={amazonUrl}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="btn btn-amazon product-btn"
+              style={{ fontSize: "0.88rem", padding: "0.55rem 1rem", whiteSpace: "nowrap" }}
+            >
+              Bekijk op Amazon
             </a>
           )}
 

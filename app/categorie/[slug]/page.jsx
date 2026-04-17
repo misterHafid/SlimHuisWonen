@@ -198,17 +198,6 @@ export default function CategoryPage({ params }) {
                           </a>
                         )}
 
-                        {p.affiliateUrl && (
-                          <a
-                            href={p.affiliateUrl}
-                            target="_blank"
-                            rel="noopener noreferrer sponsored"
-                            className="btn btn-amazon product-btn"
-                          >
-                            Bekijk op Amazon
-                          </a>
-                        )}
-
                         {coolblueUrl && (
                           <a
                             href={coolblueUrl}
@@ -217,6 +206,17 @@ export default function CategoryPage({ params }) {
                             className="btn btn-coolblue product-btn"
                           >
                             Bekijk op Coolblue
+                          </a>
+                        )}
+
+                        {p.affiliateUrl && (
+                          <a
+                            href={p.affiliateUrl}
+                            target="_blank"
+                            rel="noopener noreferrer sponsored"
+                            className="btn btn-amazon product-btn"
+                          >
+                            Bekijk op Amazon
                           </a>
                         )}
 
@@ -295,17 +295,6 @@ export default function CategoryPage({ params }) {
                           </a>
                         )}
 
-                        {p.affiliateUrl && (
-                          <a
-                            href={p.affiliateUrl}
-                            target="_blank"
-                            rel="noopener noreferrer sponsored"
-                            className="btn btn-amazon product-btn"
-                          >
-                            Bekijk op Amazon
-                          </a>
-                        )}
-
                         {coolblueUrl && (
                           <a
                             href={coolblueUrl}
@@ -314,6 +303,17 @@ export default function CategoryPage({ params }) {
                             className="btn btn-coolblue product-btn"
                           >
                             Bekijk op Coolblue
+                          </a>
+                        )}
+
+                        {p.affiliateUrl && (
+                          <a
+                            href={p.affiliateUrl}
+                            target="_blank"
+                            rel="noopener noreferrer sponsored"
+                            className="btn btn-amazon product-btn"
+                          >
+                            Bekijk op Amazon
                           </a>
                         )}
 

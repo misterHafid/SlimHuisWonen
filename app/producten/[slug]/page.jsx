@@ -238,50 +238,19 @@ export default function ProductPage({ params }) {
               </p>
             )}
 
-            {/* ✅ Knoppen: Amazon + bol.com + Coolblue */}
-            {(amazonUrl || bolUrl || coolblueUrl) && (
+            {/* ✅ Knoppen: bol.com + Coolblue + Amazon */}
+            {(bolUrl || coolblueUrl || amazonUrl) && (
               <div style={{ marginTop: "1.5rem" }}>
-                <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
-                  {amazonUrl && (
-                    <a
-                      href={amazonUrl}
-                      target="_blank"
-                      rel="noopener noreferrer sponsored"
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.4rem",
-                        padding: "0.6rem 1.1rem",
-                        borderRadius: "8px",
-                        background: "#f59e0b",
-                        color: "#1a1a1a",
-                        fontWeight: 700,
-                        fontSize: "0.9rem",
-                        textDecoration: "none",
-                      }}
-                    >
-                      Bekijk op Amazon →
-                    </a>
-                  )}
+                <div className="product-actions" style={{ flexDirection: "row", flexWrap: "wrap" }}>
                   {bolUrl && (
                     <a
                       href={bolUrl}
                       target="_blank"
                       rel="noopener noreferrer sponsored"
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.4rem",
-                        padding: "0.6rem 1.1rem",
-                        borderRadius: "8px",
-                        background: "#0000a4",
-                        color: "#fff",
-                        fontWeight: 700,
-                        fontSize: "0.9rem",
-                        textDecoration: "none",
-                      }}
+                      className="btn btn-bol product-btn"
+                      style={{ width: "auto" }}
                     >
-                      Bekijk op bol.com →
+                      Bekijk op bol.com
                     </a>
                   )}
                   {coolblueUrl && (
@@ -289,20 +258,21 @@ export default function ProductPage({ params }) {
                       href={coolblueUrl}
                       target="_blank"
                       rel="noopener noreferrer sponsored"
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: "0.4rem",
-                        padding: "0.6rem 1.1rem",
-                        borderRadius: "8px",
-                        background: "#003087",
-                        color: "#fff",
-                        fontWeight: 700,
-                        fontSize: "0.9rem",
-                        textDecoration: "none",
-                      }}
+                      className="btn btn-coolblue product-btn"
+                      style={{ width: "auto" }}
                     >
-                      Bekijk op Coolblue →
+                      Bekijk op Coolblue
+                    </a>
+                  )}
+                  {amazonUrl && (
+                    <a
+                      href={amazonUrl}
+                      target="_blank"
+                      rel="noopener noreferrer sponsored"
+                      className="btn btn-amazon product-btn"
+                      style={{ width: "auto" }}
+                    >
+                      Bekijk op Amazon
                     </a>
                   )}
                 </div>
