@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { aanraders } from "@/data/aanraders";
 import { blogPosts } from "@/data/blog";
 import { getProductBySlug } from "@/data/products";
+import { getBolUrl } from "@/lib/bol-api";
 import BuyGuideProductCard from "@/components/BuyGuideProductCard";
 import AmazonSearchCta from "@/components/AmazonSearchCta";
 import RelatedContent from "@/components/RelatedContent";
@@ -88,13 +89,14 @@ export default function AanraderDetailPage({ params }) {
 
   const amazonSearchTerm = getAmazonSearchTerm(params.slug);
 
-  /* Verrijk picks met affiliateUrl + priceHint vanuit productdata */
+  /* Verrijk picks met kooplinks + priceHint vanuit productdata */
   const enrichedPicks = guide.picks.map((pick) => {
     const slug = pick.href?.replace("/producten/", "");
     const product = slug ? getProductBySlug(slug) : null;
     return {
       ...pick,
       amazonUrl: product?.affiliateUrl || null,
+      bolUrl: product ? getBolUrl(product) : null,
       priceHint: product?.priceHint || null,
     };
   });

@@ -8,6 +8,7 @@ export default function BuyGuideProductCard({
   href,
   badges = [],
   amazonUrl,
+  bolUrl,
   priceHint,
 }) {
   return (
@@ -73,44 +74,34 @@ export default function BuyGuideProductCard({
         </p>
 
         <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap", alignItems: "center" }}>
-          {/* Directe Amazon-knop (primair) */}
+          {bolUrl && (
+            <a
+              href={bolUrl}
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              className="btn btn-bol product-btn"
+              style={{ fontSize: "0.88rem", padding: "0.55rem 1rem", whiteSpace: "nowrap" }}
+            >
+              Bekijk op bol.com
+            </a>
+          )}
+
           {amazonUrl && (
             <a
               href={amazonUrl}
               target="_blank"
               rel="noopener noreferrer sponsored"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.35rem",
-                padding: "0.55rem 1rem",
-                borderRadius: "10px",
-                background: "#f59e0b",
-                color: "#1a1a1a",
-                fontWeight: 700,
-                fontSize: "0.88rem",
-                textDecoration: "none",
-                whiteSpace: "nowrap",
-              }}
+              className="btn btn-amazon product-btn"
+              style={{ fontSize: "0.88rem", padding: "0.55rem 1rem", whiteSpace: "nowrap" }}
             >
-              {priceHint ? `Bekijk prijs (${priceHint}) →` : "Bekijk prijs op Amazon →"}
+              {priceHint ? `Amazon (${priceHint})` : "Bekijk op Amazon"}
             </a>
           )}
 
-          {/* Interne meer-info link (secundair) */}
           <Link
             href={href}
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.4rem",
-              padding: "0.55rem 0.9rem",
-              borderRadius: "10px",
-              border: "1px solid rgba(255,255,255,0.14)",
-              textDecoration: "none",
-              fontSize: "0.88rem",
-              opacity: 0.8,
-            }}
+            className="product-details-link"
+            style={{ fontSize: "0.88rem", padding: "0.55rem 0.9rem" }}
           >
             Meer info
           </Link>
